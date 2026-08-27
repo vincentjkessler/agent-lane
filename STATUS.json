@@ -1,0 +1,25 @@
+{
+  "schema": "agent-lane.public-review-status.v1",
+  "candidate_version": "1.0-candidate.1",
+  "internal_candidate_audit": "PASS",
+  "stable": false,
+  "stable_status": "V1_STABLE_BLOCKED_SG06",
+  "stability_gates": {
+    "SG-03": "PASS",
+    "SG-04": "PASS",
+    "SG-06": "BLOCKED"
+  },
+  "remaining_gate": "SG-06 outside implementation/review",
+  "identities": {
+    "candidate_freeze_sha256": "cd0119c4cd4cb24035bb9e7b375747961ba36f1be93e8da40757559190c6c8dd",
+    "normative_document_set_sha256": "b46365ee97c1797f8872a2cbee51b15e604cb680183db41afec205fc8525ce0c",
+    "candidate_schema_set_sha256": "ea5e435e5e237155e897b7285623d97e4db85b00825b19c04aa956466251407b",
+    "v0_18_rc_freeze_sha256": "ab29be6c5de8ef8147e1cc7327fae105e80ed6f8a8a4667fb1b11f1321a8e55d",
+    "sg03_evidence_bundle_sha256": "e7302401718fc752f2bba4e44a6f8397bef3b31460b19df3bea57166e3fcb2f1",
+    "sg04_evidence_bundle_sha256": "2c3fd6e8240b299f37bc0e2274b1d7c4679088c4ff607bbbdb44ce7a49a8e8f9"
+  },
+  "public_review_issues": {
+    "outside_review": 1,
+    "independent_implementation": 2
+  }
+}
