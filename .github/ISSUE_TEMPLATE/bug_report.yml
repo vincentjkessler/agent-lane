@@ -1,0 +1,49 @@
+name: Bug report
+description: Report a reproducible Agent Lane failure
+title: "[Bug]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for helping harden the alpha. Please describe the failure as a reproducible state transition, not only as a screenshot."
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS and environment
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: Task and expected result
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed result
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Receipts / logs / screenshots
+      description: Remove secrets before posting.
+  - type: checkboxes
+    id: live_state
+    attributes:
+      label: Safety boundary
+      options:
+        - label: This failure may have affected live project state, credentials, filesystem boundaries, or execution authority.
