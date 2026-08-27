@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-lane:alp:job-envelope:1.0-candidate.1",
+  "title": "Agent Lane Protocol 1.0 Candidate Governed Job",
+  "type": "object",
+  "required": [
+    "protocol_version",
+    "job_id",
+    "project_id",
+    "target",
+    "authority",
+    "operation",
+    "inputs",
+    "preconditions",
+    "execution_contract",
+    "verification_contract",
+    "rollback_policy",
+    "output_contract",
+    "idempotency"
+  ],
+  "properties": {
+    "protocol_version": {"const": "1.0-candidate.1"},
+    "job_id": {"type": "string", "minLength": 1},
+    "project_id": {"type": "string", "minLength": 1},
+    "target": {"type": ["string", "object"]},
+    "authority": {"type": "object"},
+    "operation": {"type": "object"},
+    "inputs": {"type": ["object", "array"]},
+    "preconditions": {"type": ["object", "array"]},
+    "execution_contract": {"type": "object"},
+    "verification_contract": {"type": "object"},
+    "dependencies": {"type": ["object", "array"]},
+    "rollback_policy": {"type": "object"},
+    "output_contract": {"type": "object"},
+    "idempotency": {"type": "object"}
+  }
+}
