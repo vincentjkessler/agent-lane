@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-lane:alp:capabilities:1.0-candidate.1",
+  "title": "ALP Capability Declaration 1.0 Candidate",
+  "type": "object",
+  "required": ["protocol_version", "capabilities"],
+  "properties": {
+    "protocol_version": {"const": "1.0-candidate.1"},
+    "capabilities": {
+      "type": "object",
+      "required": [
+        "core.job-envelope",
+        "core.authority",
+        "core.idempotency",
+        "core.verification",
+        "core.receipts",
+        "core.failure-recovery",
+        "core.readiness"
+      ]
+    }
+  }
+}
