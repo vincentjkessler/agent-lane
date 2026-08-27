@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-lane:alp:conformance-result:1.0-candidate.1",
+  "title": "ALP Conformance Result 1.0 Candidate",
+  "type": "object",
+  "required": ["candidate_version", "conformance_class", "status", "evidence"],
+  "properties": {
+    "candidate_version": {"const": "1.0-candidate.1"},
+    "conformance_class": {"type": "string"},
+    "status": {"enum": ["PASS", "FAIL", "BLOCKED", "NOT_ASSERTABLE"]},
+    "evidence": {"type": "array"}
+  }
+}
