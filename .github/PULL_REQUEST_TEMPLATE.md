@@ -1,18 +1,23 @@
-## Human friction removed
+## ALP area
 
-What testing/handoff friction does this change remove?
+Which specification section, schema, or evidence claim does this change affect?
 
-## Failure mode
+## Finding
 
-What is the most important thing that could break if this change is wrong?
+What contradiction, ambiguity, safety problem, interoperability problem, or evidence mismatch is being addressed?
 
-## Verification
+## Evidence
 
-- [ ] Reproduction or test steps are included.
-- [ ] Isolated-copy/live-state boundary is preserved.
-- [ ] Relevant receipts, logs, screenshots, or measurements are attached where practical.
-- [ ] Claims in this PR are limited to what the evidence supports.
+What can be reproduced or independently checked?
 
-## Alpha impact
+## Candidate impact
 
-Which item in `docs/ALPHA-GATE.md` does this improve, or why is it necessary despite not affecting the gate?
+- [ ] This does not alter the frozen candidate identity.
+- [ ] This would require a new candidate identity/freeze.
+
+Explain the selection above.
+
+## Scope
+
+- [ ] No production product/runtime source is included.
+- [ ] Claims are limited to what the submitted evidence supports.

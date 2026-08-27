@@ -1,22 +1,21 @@
-# Contributing
+# Contributing to the ALP 1.0 Candidate
 
-Agent Lane is in alpha. Contributions that improve the public protocol, reference surface, evidence quality, and core handoff semantics are preferred over broad feature expansion.
+This repository is the public external-review surface for the frozen Agent Lane Protocol 1.0 Candidate.
 
-## Repository scope
+## Useful contributions
 
-This repository is the public protocol/community/reference surface. It is **not** the default destination for the complete production Agent Lane implementation.
-
-Do not submit production Receiver/runtime source, Test Center/workbench internals, operational recovery machinery, deployment/configuration internals, security-sensitive integration details, or other proprietary production implementation material unless that component has first been deliberately approved for public release.
-
-See [`docs/PUBLICATION-BOUNDARY.md`](docs/PUBLICATION-BOUNDARY.md).
+- identify contradictions or ambiguous normative language
+- identify unsafe or underspecified semantics
+- challenge evidence claims against `EVIDENCE_STATUS.md`
+- propose narrowly scoped specification/schema corrections
+- provide a substantive outside implementation or review for SG-06
 
 ## Before opening a PR
 
-1. State the human testing friction or protocol ambiguity being addressed.
-2. Describe the failure mode if the change is wrong.
-3. Include a reproducible verification path.
-4. Preserve the isolated-copy/live-state boundary.
-5. Avoid introducing a model-vendor dependency unless the feature is explicitly adapter-scoped.
-6. Confirm that the material belongs inside the declared public publication boundary.
+1. State the specification section or schema affected.
+2. Describe the concrete interoperability, safety, or semantic problem.
+3. Distinguish observed evidence from inference.
+4. Explain whether the change would alter the frozen candidate identity.
+5. Include reproducible evidence or a minimal implementation example when practical.
 
-For behavior changes, include before/after evidence when practical.
+Production product/runtime source and product feature work are outside the scope of this repository.

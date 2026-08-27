@@ -1,0 +1,32 @@
+name: ALP candidate review
+description: Report a substantive finding against the ALP 1.0 Candidate
+title: "[ALP review] "
+body:
+  - type: textarea
+    id: area
+    attributes:
+      label: Specification area
+      description: Identify the section, schema, or evidence claim being reviewed.
+    validations:
+      required: true
+  - type: textarea
+    id: finding
+    attributes:
+      label: Finding
+      description: Describe the contradiction, ambiguity, unsafe semantic, missing capability, interoperability problem, or overclaim.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or reproduction
+      description: Provide concrete evidence, a minimal implementation, or steps another reviewer can independently check.
+    validations:
+      required: true
+  - type: checkboxes
+    id: outside
+    attributes:
+      label: Review status
+      options:
+        - label: I am providing substantive outside review rather than internally authored self-review.
+          required: false
