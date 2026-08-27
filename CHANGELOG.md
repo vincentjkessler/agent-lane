@@ -9,3 +9,4 @@
 - Reworked the launch experience into a task-to-test mission rather than a product tour.
 - Added graceful degradation for optional 3D launch assets.
 - Removed duplicate UI animation scheduling from the launch page.
+- Defined a split public/private publication model: protocol, evidence, review, and deliberately selected reference material remain public; production runtime/workbench and sensitive implementation internals remain private by default.
