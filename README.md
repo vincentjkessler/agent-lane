@@ -52,6 +52,32 @@ The alpha records task-to-test latency, human hands-on time, manual handoffs avo
 
 Lane is being exercised against real products rather than toy demos, including **RoomForge**, **The Old Keep**, and **Ravenhurst**. They are evidence for the workflow, not separate requirements for understanding Lane.
 
+## Publication boundary
+
+This repository is the **public protocol, community, evidence, and reference surface** for Agent Lane. It is **not automatically the repository for the complete production implementation**.
+
+Public scope includes:
+
+- ALP specification and schemas
+- external review and SG-06 materials
+- architecture and conceptual documentation
+- alpha acceptance criteria and measurement methodology
+- public evidence/status summaries
+- deliberately chosen examples, SDKs, adapters, or reference implementations
+
+Out of scope by default:
+
+- production Receiver/runtime source
+- production Test Center/workbench internals
+- operational recovery machinery
+- deployment/configuration internals
+- security-sensitive integration details
+- proprietary production implementation knowledge
+
+Those components remain private unless they are deliberately reviewed and selected for public release. See [`docs/PUBLICATION-BOUNDARY.md`](docs/PUBLICATION-BOUNDARY.md).
+
+**Important:** the MIT license applies to material actually published in this repository. It should not be interpreted as a commitment to publish unreleased production components.
+
 ---
 
 # Agent Lane Protocol 1.0 Candidate — External Review
@@ -103,6 +129,7 @@ Internally authored code, automated self-review, reactions, stars, or a vague ap
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — product/test-loop architecture
 - [`docs/ALPHA-GATE.md`](docs/ALPHA-GATE.md) — alpha acceptance criteria
 - [`docs/METRICS.md`](docs/METRICS.md) — evidence plan for time savings
+- [`docs/PUBLICATION-BOUNDARY.md`](docs/PUBLICATION-BOUNDARY.md) — public/private implementation boundary
 - [`SECURITY.md`](SECURITY.md) — security reporting
 - [`CONTRIBUTING.md`](CONTRIBUTING.md) — contribution rules
 - [`CHANGELOG.md`](CHANGELOG.md) — public changes
