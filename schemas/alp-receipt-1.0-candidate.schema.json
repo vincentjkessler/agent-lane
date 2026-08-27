@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:agent-lane:alp:receipt:1.0-candidate.1",
+  "title": "ALP Settlement Receipt 1.0 Candidate",
+  "type": "object",
+  "required": [
+    "protocol_version", "job_id", "attempt_id", "project_id", "target",
+    "authority_identity", "operation_class", "settlement_status",
+    "dependency_identities", "artifact_or_effect_identity", "settlement_order"
+  ],
+  "properties": {
+    "protocol_version": {"const": "1.0-candidate.1"},
+    "job_id": {"type": "string"},
+    "attempt_id": {"type": "string"},
+    "project_id": {"type": "string"},
+    "target": {},
+    "authority_identity": {"type": "object"},
+    "operation_class": {"type": "string"},
+    "settlement_status": {"type": "string"},
+    "verifier_result": {"type": ["object", "null"]},
+    "dependency_identities": {"type": "array"},
+    "artifact_or_effect_identity": {"type": ["object", "null"]},
+    "settlement_order": {}
+  }
+}
