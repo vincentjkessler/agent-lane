@@ -1,0 +1,12 @@
+{
+  "schema": "bci.candidate.v2",
+  "runId": "bci-20260915-003914-41984cae8fb0",
+  "task": 3,
+  "candidateId": "t3-d42e",
+  "title": "Editable project title",
+  "html": "<section class=\"title-editor\"><div class=\"title-row\"><strong data-title>Alpha Project</strong><button type=\"button\" data-edit>Edit</button></div><div class=\"edit-row\" data-editor hidden><label>Project title <input data-input></label><button type=\"button\" data-save>Save</button><button type=\"button\" data-cancel>Cancel</button></div></section>",
+  "css": ".title-editor{display:grid;gap:10px;max-width:430px;padding:14px;border:1px solid #ccc;border-radius:10px}.title-row,.edit-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.title-row strong{font:700 19px system-ui}.title-editor label{display:flex;align-items:center;gap:6px;font:14px system-ui}.title-editor input{padding:7px 9px;min-width:210px}.title-editor button{padding:7px 10px;cursor:pointer}",
+  "js": "const titleEl=root.querySelector('[data-title]'),editBtn=root.querySelector('[data-edit]'),editor=root.querySelector('[data-editor]'),input=root.querySelector('[data-input]');const current=()=>String(api.getState('title')??'Alpha Project');const render=()=>{titleEl.textContent=current();};editBtn.onclick=()=>{input.value=current();editor.hidden=false;editBtn.disabled=true;input.focus();input.select();};root.querySelector('[data-save]').onclick=()=>{const next=input.value.trim();if(next)api.setState('title',next);editor.hidden=true;editBtn.disabled=false;render();};root.querySelector('[data-cancel]').onclick=()=>{input.value=current();editor.hidden=true;editBtn.disabled=false;render();};render();api.log(3,'title editor mounted');",
+  "feedbackCommentUrl": null,
+  "feedbackChoiceConsumed": null
+}
