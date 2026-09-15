@@ -1,0 +1,11 @@
+{
+  "schema": "bci.candidate.v2",
+  "runId": "bci-20260915-005946-7e66a7ad1bbe",
+  "task": 5,
+  "candidateId": "t5-d14a",
+  "title": "Compact and comfortable density",
+  "html": "<section class=\"density-demo\"><div class=\"density-controls\"><button type=\"button\" data-density=\"compact\">Compact</button><button type=\"button\" data-density=\"comfortable\" aria-pressed=\"true\">Comfortable</button></div><ul data-sample class=\"comfortable\"><li>Design brief</li><li>Prototype review</li><li>Acceptance tests</li><li>Release notes</li></ul></section>",
+  "css": ".density-demo{max-width:420px;padding:16px;border:1px solid #bbb;border-radius:10px}.density-controls{display:flex;gap:8px;margin-bottom:12px}.density-controls button{padding:6px 10px;cursor:pointer}.density-demo ul{margin:0;padding:0;list-style:none;border:1px solid #ddd;border-radius:8px;overflow:hidden}.density-demo li{border-bottom:1px solid #ddd}.density-demo li:last-child{border-bottom:0}.density-demo ul.compact li{padding:4px 10px}.density-demo ul.comfortable li{padding:14px 12px}.density-controls button[aria-pressed=\"true\"]{font-weight:700;outline:2px solid currentColor}",
+  "js": "const sample=root.querySelector('[data-sample]'); const buttons=[...root.querySelectorAll('[data-density]')]; buttons.forEach(btn=>btn.addEventListener('click',()=>{const mode=btn.dataset.density;sample.className=mode;buttons.forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));}));",
+  "feedbackChoiceConsumed": null
+}
