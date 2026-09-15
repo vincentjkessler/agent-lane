@@ -1,0 +1,12 @@
+{
+  "schema": "bci.candidate.v2",
+  "runId": "bci-20260915-003914-41984cae8fb0",
+  "task": 1,
+  "candidateId": "t1-7f3a",
+  "title": "Counter controls",
+  "html": "<section class=\"counter-demo\" aria-label=\"Counter controls\"><div class=\"count-label\">Count: <strong data-count>0</strong></div><div class=\"counter-actions\"><button type=\"button\" data-delta=\"1\">+1</button><button type=\"button\" data-delta=\"-1\">-1</button><button type=\"button\" data-reset>Reset</button></div></section>",
+  "css": ".counter-demo{display:grid;gap:12px;max-width:320px;padding:16px;border:1px solid #ccc;border-radius:10px}.count-label{font:600 20px system-ui}.counter-actions{display:flex;gap:8px}.counter-actions button{padding:8px 12px;cursor:pointer}",
+  "js": "const countEl=root.querySelector('[data-count]');let count=Number(api.getState('counter')??0);const render=()=>{countEl.textContent=String(count);api.setState('counter',count);};root.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.hasAttribute('data-reset'))count=0;else if(b.dataset.delta)count+=Number(b.dataset.delta);render();});render();api.log(1,'counter mounted');",
+  "feedbackCommentUrl": null,
+  "feedbackChoiceConsumed": null
+}
