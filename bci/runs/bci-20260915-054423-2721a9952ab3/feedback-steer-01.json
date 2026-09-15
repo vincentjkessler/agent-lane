@@ -1,0 +1,10 @@
+{
+  "schema": "bci.feedback.v2",
+  "runId": "bci-20260915-054423-2721a9952ab3",
+  "steer": 1,
+  "sourceTask": 2,
+  "choice": "B",
+  "meaning": "TOP_TABS",
+  "createdAt": "2026-09-15T05:47:48.538Z",
+  "nonce": "14dddd3f-da66-4d53-9197-4759cd5794fc"
+}
