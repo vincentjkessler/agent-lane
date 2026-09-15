@@ -1,0 +1,11 @@
+{
+  "schema": "bci.candidate.v2",
+  "runId": "bci-20260915-005946-7e66a7ad1bbe",
+  "task": 2,
+  "candidateId": "t2-c42d",
+  "title": "Three insertion behaviors",
+  "html": "<section class=\"insertions\"><article data-demo=\"A\"><h3>A · Prepend</h3><p>Charlie goes first.</p><output></output><div><button data-insert>Insert Charlie</button><button data-reset>Reset</button></div></article><article data-demo=\"B\"><h3>B · Append</h3><p>Charlie goes last.</p><output></output><div><button data-insert>Insert Charlie</button><button data-reset>Reset</button></div></article><article data-demo=\"C\"><h3>C · Alphabetical</h3><p>Charlie is inserted, then the list is sorted.</p><output></output><div><button data-insert>Insert Charlie</button><button data-reset>Reset</button></div></article></section>",
+  "css": ".insertions{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.insertions article{padding:14px;border:1px solid #bbb;border-radius:10px}.insertions h3{margin:0 0 4px}.insertions p{min-height:40px;margin:0 0 10px;color:#555}.insertions output{display:block;font-family:monospace;font-weight:700;margin:10px 0}.insertions button{margin:4px 6px 0 0;padding:6px 9px;cursor:pointer}",
+  "js": "const initial=['Bravo','Delta']; const state={A:[...initial],B:[...initial],C:[...initial]}; const paint=k=>{root.querySelector(`[data-demo=\"${k}\"] output`).textContent='['+state[k].join(', ')+']';}; ['A','B','C'].forEach(paint); root.addEventListener('click',e=>{const card=e.target.closest('[data-demo]');if(!card)return;const k=card.dataset.demo;if(e.target.matches('[data-reset]'))state[k]=[...initial];if(e.target.matches('[data-insert]')){if(k==='A')state[k]=['Charlie',...initial];if(k==='B')state[k]=[...initial,'Charlie'];if(k==='C')state[k]=[...initial,'Charlie'].sort((a,b)=>a.localeCompare(b));}paint(k);});",
+  "feedbackChoiceConsumed": null
+}
