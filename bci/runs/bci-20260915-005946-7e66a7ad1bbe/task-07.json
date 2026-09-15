@@ -1,0 +1,11 @@
+{
+  "schema": "bci.candidate.v2",
+  "runId": "bci-20260915-005946-7e66a7ad1bbe",
+  "task": 7,
+  "candidateId": "t7-f31c",
+  "title": "State persistence",
+  "html": "<section class=\"persist-demo\"><p data-status></p><div><button type=\"button\" data-save>Save Current State</button><button type=\"button\" data-clear>Clear Saved State</button></div></section>",
+  "css": ".persist-demo{max-width:460px;padding:16px;border:1px solid #bbb;border-radius:10px}.persist-demo p{margin:0 0 12px}.persist-demo div{display:flex;gap:8px;flex-wrap:wrap}.persist-demo button{padding:7px 10px;cursor:pointer}",
+  "js": "const key='bci:project-state:v1',status=root.querySelector('[data-status]'); const valid=x=>x&&typeof x.title==='string'&&Array.isArray(x.cards)&&x.cards.every(v=>typeof v==='string'); const save=()=>{const data={title:api.getState('title'),cards:api.getState('cards')};localStorage.setItem(key,JSON.stringify(data));status.textContent='Saved title and cards.';}; try{const raw=localStorage.getItem(key);if(raw){const saved=JSON.parse(raw);if(valid(saved)){api.setState('title',saved.title);api.setState('cards',[...saved.cards]);status.textContent='Restored saved title and cards.';}else status.textContent='Saved state was invalid and ignored.';}else status.textContent='No saved state yet.';}catch{status.textContent='Saved state could not be read.';} root.querySelector('[data-save]').addEventListener('click',save);root.querySelector('[data-clear]').addEventListener('click',()=>{localStorage.removeItem(key);status.textContent='Saved state cleared.';});window.addEventListener('pagehide',save,{once:true});",
+  "feedbackChoiceConsumed": null
+}
