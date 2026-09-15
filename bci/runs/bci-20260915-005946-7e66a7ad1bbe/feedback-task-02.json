@@ -1,0 +1,9 @@
+{
+  "schema": "bci.feedback.v1",
+  "runId": "bci-20260915-005946-7e66a7ad1bbe",
+  "task": 2,
+  "choice": "A",
+  "meaning": "PREPEND",
+  "createdAt": "2026-09-15T01:01:47.836Z",
+  "nonce": "290285b8-ad81-4bdc-9e8b-612eda785648"
+}
