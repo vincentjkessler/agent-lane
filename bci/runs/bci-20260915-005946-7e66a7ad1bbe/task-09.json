@@ -1,0 +1,11 @@
+{
+  "schema": "bci.candidate.v2",
+  "runId": "bci-20260915-005946-7e66a7ad1bbe",
+  "task": 9,
+  "candidateId": "t9-4e6a",
+  "title": "Import project JSON",
+  "html": "<section class=\"import-demo\"><label>Project JSON<textarea data-input rows=\"9\" placeholder=\"Paste an export here\"></textarea></label><button type=\"button\" data-import>Validate &amp; Import</button><p data-status aria-live=\"polite\"></p></section>",
+  "css": ".import-demo{display:grid;gap:10px;max-width:520px;padding:16px;border:1px solid #bbb;border-radius:10px}.import-demo label{display:grid;gap:6px;font-weight:600}.import-demo textarea{width:100%;box-sizing:border-box;padding:9px;font-family:monospace;resize:vertical}.import-demo button{justify-self:start;padding:7px 10px;cursor:pointer}.import-demo [data-status]{margin:0;min-height:1.4em}",
+  "js": "const input=root.querySelector('[data-input]'),status=root.querySelector('[data-status]'); const validate=x=>x&&x.version===1&&typeof x.timestamp==='string'&&typeof x.title==='string'&&Array.isArray(x.cards)&&x.cards.every(v=>typeof v==='string'); root.querySelector('[data-import]').addEventListener('click',()=>{let parsed;try{parsed=JSON.parse(input.value);}catch{status.textContent='ERROR: invalid JSON. Current state was not changed.';return;}if(!validate(parsed)){status.textContent='ERROR: expected version 1, timestamp, string title, and string[] cards. Current state was not changed.';return;}api.setState('title',parsed.title);api.setState('cards',[...parsed.cards]);status.textContent=`Imported: ${parsed.title} (${parsed.cards.length} cards).`;});",
+  "feedbackChoiceConsumed": null
+}
