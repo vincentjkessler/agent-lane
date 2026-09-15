@@ -1,0 +1,12 @@
+{
+  "schema": "bci.candidate.v2",
+  "runId": "bci-20260915-003914-41984cae8fb0",
+  "task": 5,
+  "candidateId": "t5-e671",
+  "title": "Compact and comfortable density",
+  "html": "<section class=\"density-module comfortable\" data-density><div class=\"density-actions\"><button type=\"button\" data-mode=\"compact\">Compact</button><button type=\"button\" data-mode=\"comfortable\" aria-pressed=\"true\">Comfortable</button></div><ul><li>Bravo</li><li>Charlie</li><li>Delta</li><li>Echo</li><li>Foxtrot</li></ul><p data-status>Comfortable spacing</p></section>",
+  "css": ".density-module{max-width:360px}.density-actions{display:flex;gap:8px;margin-bottom:10px}.density-actions button{padding:7px 10px;cursor:pointer}.density-module ul{list-style:none;padding:0;margin:0;border:1px solid #bbb;border-radius:8px;overflow:hidden}.density-module li{border-bottom:1px solid #ddd;transition:padding .15s ease}.density-module li:last-child{border-bottom:0}.density-module.compact li{padding:3px 9px;line-height:1.15}.density-module.comfortable li{padding:12px 14px;line-height:1.45}.density-module [data-status]{margin:8px 0 0;color:#555;font:13px system-ui}",
+  "js": "const box=root.querySelector('[data-density]'),status=root.querySelector('[data-status]');root.querySelectorAll('[data-mode]').forEach(btn=>btn.onclick=()=>{const mode=btn.dataset.mode;box.classList.toggle('compact',mode==='compact');box.classList.toggle('comfortable',mode==='comfortable');root.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b===btn)));status.textContent=(mode==='compact'?'Compact':'Comfortable')+' spacing';});api.log(5,'density controls mounted');",
+  "feedbackCommentUrl": null,
+  "feedbackChoiceConsumed": null
+}
