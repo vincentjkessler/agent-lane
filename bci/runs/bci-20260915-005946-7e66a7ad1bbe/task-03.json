@@ -1,0 +1,11 @@
+{
+  "schema": "bci.candidate.v2",
+  "runId": "bci-20260915-005946-7e66a7ad1bbe",
+  "task": 3,
+  "candidateId": "t3-e73b",
+  "title": "Editable project title",
+  "html": "<section class=\"title-editor\"><div data-view><h3 data-title></h3><button type=\"button\" data-edit>Edit</button></div><form data-form hidden><label>Project title <input data-input></label><div><button type=\"submit\">Save</button><button type=\"button\" data-cancel>Cancel</button></div></form></section>",
+  "css": ".title-editor{max-width:420px;padding:16px;border:1px solid #bbb;border-radius:10px}.title-editor [data-view]{display:flex;align-items:center;gap:12px}.title-editor h3{margin:0;flex:1}.title-editor form{display:grid;gap:10px}.title-editor label{display:grid;gap:5px}.title-editor input{padding:7px}.title-editor button{padding:6px 10px;cursor:pointer}.title-editor form div{display:flex;gap:8px}",
+  "js": "const view=root.querySelector('[data-view]'),form=root.querySelector('[data-form]'),title=root.querySelector('[data-title]'),input=root.querySelector('[data-input]'); const render=()=>{title.textContent=api.getState('title') ?? 'Alpha Project';}; root.querySelector('[data-edit]').addEventListener('click',()=>{input.value=api.getState('title') ?? 'Alpha Project';view.hidden=true;form.hidden=false;input.focus();input.select();}); root.querySelector('[data-cancel]').addEventListener('click',()=>{form.hidden=true;view.hidden=false;render();}); form.addEventListener('submit',e=>{e.preventDefault();api.setState('title',input.value);form.hidden=true;view.hidden=false;render();}); render();",
+  "feedbackChoiceConsumed": null
+}
