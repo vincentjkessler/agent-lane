@@ -1,0 +1,11 @@
+{
+  "schema": "bci.candidate.v2",
+  "runId": "bci-20260915-005946-7e66a7ad1bbe",
+  "task": 8,
+  "candidateId": "t8-7bd2",
+  "title": "Export project JSON",
+  "html": "<section class=\"export-demo\"><button type=\"button\" data-export>Refresh Export</button><label>Project JSON<textarea data-output rows=\"9\" readonly></textarea></label></section>",
+  "css": ".export-demo{display:grid;gap:10px;max-width:520px;padding:16px;border:1px solid #bbb;border-radius:10px}.export-demo button{justify-self:start;padding:7px 10px;cursor:pointer}.export-demo label{display:grid;gap:6px;font-weight:600}.export-demo textarea{width:100%;box-sizing:border-box;padding:9px;font-family:monospace;resize:vertical}",
+  "js": "const out=root.querySelector('[data-output]'); const build=()=>({version:1,timestamp:new Date().toISOString(),title:String(api.getState('title') ?? ''),cards:Array.isArray(api.getState('cards'))?[...api.getState('cards')]:[]}); const render=()=>{out.value=JSON.stringify(build(),null,2);}; root.querySelector('[data-export]').addEventListener('click',render);render();",
+  "feedbackChoiceConsumed": null
+}
