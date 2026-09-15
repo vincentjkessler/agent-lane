@@ -1,0 +1,10 @@
+{
+  "schema": "bci.feedback.v2",
+  "runId": "bci-20260915-054423-2721a9952ab3",
+  "steer": 2,
+  "sourceTask": 5,
+  "choice": "A",
+  "meaning": "INLINE_EDIT",
+  "createdAt": "2026-09-15T05:54:06.922Z",
+  "nonce": "0178b091-3ec6-4bab-abc9-5a4eadd6eb31"
+}
