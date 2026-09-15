@@ -1,0 +1,11 @@
+{
+  "schema": "bci.candidate.v2",
+  "runId": "bci-20260915-005946-7e66a7ad1bbe",
+  "task": 4,
+  "candidateId": "t4-b58c",
+  "title": "Live list filter",
+  "html": "<section class=\"filter-demo\"><label>Filter items <input type=\"search\" data-filter placeholder=\"Type to filter\"></label><ul data-list></ul><p data-empty hidden>No matches</p></section>",
+  "css": ".filter-demo{max-width:380px;padding:16px;border:1px solid #bbb;border-radius:10px}.filter-demo label{display:grid;gap:6px;font-weight:600}.filter-demo input{padding:8px}.filter-demo ul{margin:12px 0 0;padding-left:22px}.filter-demo li{padding:3px 0}.filter-demo [data-empty]{color:#666}",
+  "js": "const items=['Atlas','Bravo','Charlie','Delta','Echo','Foxtrot','Gamma']; const list=root.querySelector('[data-list]'),input=root.querySelector('[data-filter]'),empty=root.querySelector('[data-empty]'); const render=()=>{const q=input.value.trim().toLowerCase();const shown=items.filter(x=>x.toLowerCase().includes(q));list.replaceChildren(...shown.map(x=>{const li=document.createElement('li');li.textContent=x;return li;}));empty.hidden=shown.length!==0;}; input.addEventListener('input',render);render();",
+  "feedbackChoiceConsumed": null
+}
