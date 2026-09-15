@@ -1,0 +1,11 @@
+{
+  "schema": "bci.candidate.v2",
+  "runId": "bci-20260915-005946-7e66a7ad1bbe",
+  "task": 6,
+  "candidateId": "t6-a62e",
+  "title": "Feedback-driven Add Card",
+  "html": "<section class=\"add-card\"><form><label>Card name <input data-name required placeholder=\"New card\"></label><button type=\"submit\">Add</button></form><p class=\"rule\">Chosen behavior: new cards are added to the beginning.</p><ol data-cards></ol></section>",
+  "css": ".add-card{max-width:430px;padding:16px;border:1px solid #bbb;border-radius:10px}.add-card form{display:flex;gap:8px;align-items:end}.add-card label{display:grid;gap:5px;flex:1}.add-card input,.add-card button{padding:8px}.add-card button{cursor:pointer}.add-card .rule{font-size:.9rem;color:#555}.add-card ol{padding-left:26px}.add-card li{padding:4px 0}",
+  "js": "const form=root.querySelector('form'),input=root.querySelector('[data-name]'),list=root.querySelector('[data-cards]'); const cards=()=>{const v=api.getState('cards');return Array.isArray(v)?v:[];}; const render=()=>{list.replaceChildren(...cards().map(name=>{const li=document.createElement('li');li.textContent=name;return li;}));}; form.addEventListener('submit',e=>{e.preventDefault();const name=input.value.trim();if(!name)return;api.setState('cards',[name,...cards()]);input.value='';render();input.focus();});render();",
+  "feedbackChoiceConsumed": "A"
+}
