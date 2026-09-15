@@ -1,0 +1,11 @@
+{
+  "schema": "bci.candidate.v2",
+  "runId": "bci-20260915-005946-7e66a7ad1bbe",
+  "task": 1,
+  "candidateId": "t1-a91f",
+  "title": "Counter controls",
+  "html": "<section class=\"counter-demo\"><strong>Count: <span data-count>0</span></strong><div class=\"controls\"><button type=\"button\" data-action=\"inc\">+1</button><button type=\"button\" data-action=\"dec\">-1</button><button type=\"button\" data-action=\"reset\">Reset</button></div></section>",
+  "css": ".counter-demo{display:grid;gap:12px;max-width:320px;padding:16px;border:1px solid #bbb;border-radius:10px}.counter-demo strong{font-size:1.35rem}.controls{display:flex;gap:8px}.controls button{padding:7px 12px;cursor:pointer}",
+  "js": "const out=root.querySelector('[data-count]'); const render=()=>{out.textContent=String(api.getState('counter') ?? 0);}; const set=n=>{api.setState('counter',n); render();}; root.addEventListener('click',e=>{const a=e.target.dataset.action;if(!a)return;const n=Number(api.getState('counter') ?? 0);if(a==='inc')set(n+1);if(a==='dec')set(n-1);if(a==='reset')set(0);}); render();",
+  "feedbackChoiceConsumed": null
+}
