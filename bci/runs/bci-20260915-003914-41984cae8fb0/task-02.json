@@ -1,0 +1,12 @@
+{
+  "schema": "bci.candidate.v2",
+  "runId": "bci-20260915-003914-41984cae8fb0",
+  "task": 2,
+  "candidateId": "t2-a91c",
+  "title": "Three insertion behaviors",
+  "html": "<section class=\"insert-grid\"><article data-mode=\"A\"><h3>A · PREPEND</h3><p class=\"hint\">Charlie goes first.</p><div data-list></div><button type=\"button\" data-insert>Insert Charlie</button><button type=\"button\" data-reset>Reset</button></article><article data-mode=\"B\"><h3>B · APPEND</h3><p class=\"hint\">Charlie goes last.</p><div data-list></div><button type=\"button\" data-insert>Insert Charlie</button><button type=\"button\" data-reset>Reset</button></article><article data-mode=\"C\"><h3>C · ALPHABETICAL</h3><p class=\"hint\">List is re-sorted A→Z.</p><div data-list></div><button type=\"button\" data-insert>Insert Charlie</button><button type=\"button\" data-reset>Reset</button></article></section>",
+  "css": ".insert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.insert-grid article{border:1px solid #bbb;border-radius:10px;padding:14px}.insert-grid h3{margin:0 0 4px;font:700 15px system-ui}.insert-grid .hint{margin:0 0 10px;color:#555;font:13px system-ui}.insert-grid [data-list]{min-height:42px;padding:9px;margin-bottom:10px;background:#f5f5f5;border-radius:6px;font:14px ui-monospace,monospace}.insert-grid button{margin:0 6px 4px 0;padding:7px 9px;cursor:pointer}",
+  "js": "const base=['Bravo','Delta'];root.querySelectorAll('[data-mode]').forEach(panel=>{let items=base.slice();const out=panel.querySelector('[data-list]');const render=()=>out.textContent='['+items.join(', ')+']';panel.querySelector('[data-insert]').onclick=()=>{if(items.includes('Charlie'))return;const m=panel.dataset.mode;if(m==='A')items=['Charlie',...items];else if(m==='B')items=[...items,'Charlie'];else items=[...items,'Charlie'].sort((a,b)=>a.localeCompare(b));render();};panel.querySelector('[data-reset]').onclick=()=>{items=base.slice();render();};render();});api.log(2,'three insertion demos mounted');",
+  "feedbackCommentUrl": "https://github.com/vincentjkessler/agent-lane/issues/4#issuecomment-5672907271",
+  "feedbackChoiceConsumed": null
+}
