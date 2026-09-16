@@ -1,6 +1,6 @@
 {
   "schema": "emergent-capability-surface/v1",
-  "updated_at": "2026-09-16T13:58:30-05:00",
+  "updated_at": "2026-09-16T14:07:49-05:00",
   "method": "Capabilities are promoted to CONFIRMED only after a reproducible controlled test with durable evidence. Documented primitives are distinguished from novel compositions.",
   "confirmed": [
     {
@@ -50,6 +50,13 @@
       "boundary": "Confirmed for Scheduled condition-watch polling, not true webhook-triggered ordinary ChatGPT. ECS-006A also showed that scheduled connector mutations can be blocked by platform safety approval even when the connected app is configured for full access."
     },
     {
+      "id": "ECS-007",
+      "name": "Human-interruptible execution",
+      "status": "CONFIRMED",
+      "summary": "A durable runtime stopped at an explicit human-steer state, accepted a later human policy choice, resumed from the persisted state, and completed with verified output materially determined by that steer.",
+      "evidence": "bci/runs/ecs-012-20260916-APP1/receipts/final.json"
+    },
+    {
       "id": "ECS-008",
       "name": "Cross-tool transduction",
       "status": "CONFIRMED",
@@ -62,6 +69,22 @@
       "status": "CONFIRMED",
       "summary": "ChatGPT authored a purpose-built executable solver and verifier during the task and consumed the externally produced output as a new task primitive.",
       "evidence": "bci/runs/ecs-009-013-20260916-1311/receipts/final.json"
+    },
+    {
+      "id": "ECS-012",
+      "name": "Applicationless application",
+      "status": "CONFIRMED",
+      "summary": "A useful release-steward application behavior emerged from the composition of ordinary ChatGPT reasoning, durable GitHub state, generated instruments, hosted execution, independent verification, a human control point, resumable execution, and final durable artifacts without a conventional monolithic coordinating application.",
+      "evidence": "bci/runs/ecs-012-20260916-APP1/receipts/final.json",
+      "verified_specimen": {
+        "name": "ECL Release Steward",
+        "stage1_workflow_run_id": 35138405247,
+        "stage2_workflow_run_id": 35138660013,
+        "stage2_workflow_job_id": 104937333903,
+        "selected_policy": "FRONTIER",
+        "release_sha256": "3b552c88e0352f2bc8dc6fd2723267a9847bac65ee2ffbcb07fa7aa6a5bee459",
+        "verification": "PASS"
+      }
     },
     {
       "id": "ECS-013",
@@ -89,10 +112,8 @@
   ],
   "candidates": [
     {"id": "ECS-002", "name": "Repository as transactional working memory", "status": "PARTIALLY-SUBSUMED-BY-ECS-003"},
-    {"id": "ECS-007", "name": "Human-interruptible execution", "status": "HYPOTHESIS"},
-    {"id": "ECS-010", "name": "Self-verifying production loops", "status": "PARTIALLY-DEMONSTRATED-BY-ECS-009-013-014"},
-    {"id": "ECS-011", "name": "Capability acquisition during a task", "status": "MECHANISM-OBSERVED"},
-    {"id": "ECS-012", "name": "Applicationless application", "status": "STRONGLY-SUGGESTED-BY-ECS-006-008-014"}
+    {"id": "ECS-010", "name": "Self-verifying production loops", "status": "PARTIALLY-DEMONSTRATED-BY-ECS-009-012-013-014"},
+    {"id": "ECS-011", "name": "Capability acquisition during a task", "status": "MECHANISM-OBSERVED"}
   ],
-  "emerging_pattern": "Confirmed behavior now spans cold-context state restoration, selective context virtualization, persistent protocols across multiple substrates, self-authored remote execution, cross-tool transduction, coherent multi-epoch state progression across separate cold conversations, and autonomous condition-watch wake/verification without a user starting the observer turn. The strongest remaining architectural question is whether these primitives can be combined into one useful application-like system with interruption, recovery, policy boundaries, and closed-loop verification rather than isolated capability proofs."
+  "emerging_pattern": "Confirmed behavior now spans cold-context state restoration, selective context virtualization, persistent protocols across multiple substrates, self-authored remote execution, cross-tool transduction, coherent multi-epoch state progression across separate cold conversations, autonomous condition-watch wake/verification, human-interruptible durable execution, and one useful application-like specimen assembled from those primitives without a conventional coordinating application. The strongest remaining question is whether a verifier can autonomously diagnose, repair, retry, and safely advance useful work without human repair of implementation faults."
 }
