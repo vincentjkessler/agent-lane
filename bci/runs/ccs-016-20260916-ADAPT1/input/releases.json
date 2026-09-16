@@ -1,0 +1,13 @@
+{
+  "schema": "ccs-016-releases/v1",
+  "items": [
+    {"id":"R-101","tests_passed":true,"security_review":"pass","rollback_ready":true,"docs_ready":false,"owner_ack":true,"migration_plan":"none","blast_radius":"low","customer_impact":"none"},
+    {"id":"R-102","tests_passed":true,"security_review":"pass","rollback_ready":false,"docs_ready":true,"owner_ack":true,"migration_plan":"ready","blast_radius":"medium","customer_impact":"minor"},
+    {"id":"R-103","tests_passed":false,"security_review":"pass","rollback_ready":true,"docs_ready":true,"owner_ack":false,"migration_plan":"ready","blast_radius":"high","customer_impact":"major"},
+    {"id":"R-104","tests_passed":true,"security_review":"conditional","rollback_ready":true,"docs_ready":true,"owner_ack":true,"migration_plan":"ready","blast_radius":"low","customer_impact":"minor"},
+    {"id":"R-105","tests_passed":true,"security_review":"pass","rollback_ready":true,"docs_ready":true,"owner_ack":false,"migration_plan":"none","blast_radius":"medium","customer_impact":"none"},
+    {"id":"R-106","tests_passed":true,"security_review":"pass","rollback_ready":true,"docs_ready":false,"owner_ack":true,"migration_plan":"ready","blast_radius":"high","customer_impact":"major"},
+    {"id":"R-107","tests_passed":false,"security_review":"fail","rollback_ready":false,"docs_ready":false,"owner_ack":false,"migration_plan":"missing","blast_radius":"high","customer_impact":"major"},
+    {"id":"R-108","tests_passed":true,"security_review":"pass","rollback_ready":true,"docs_ready":true,"owner_ack":true,"migration_plan":"ready","blast_radius":"low","customer_impact":"none"}
+  ]
+}
