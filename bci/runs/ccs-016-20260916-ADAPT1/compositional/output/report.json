@@ -1,25 +1,21 @@
 {
   "counts": {
-    "APPROVE": 4,
-    "HOLD": 4
+    "APPROVE": 2,
+    "HOLD": 6
   },
-  "digest": "e33df0bc0828ed592fbe1c2b048987c922c0b52e46dbe13e417d25c34b827072",
+  "digest": "79c02c18da054fe9a0aa80fbf1681b5fabd565b2be0c5ac0d8859d673180f3bb",
   "items": [
-    {
-      "decision": "APPROVE",
-      "id": "R-101"
-    },
     {
       "decision": "APPROVE",
       "id": "R-105"
     },
     {
       "decision": "APPROVE",
-      "id": "R-106"
+      "id": "R-108"
     },
     {
-      "decision": "APPROVE",
-      "id": "R-108"
+      "decision": "HOLD",
+      "id": "R-101"
     },
     {
       "decision": "HOLD",
@@ -35,9 +31,13 @@
     },
     {
       "decision": "HOLD",
+      "id": "R-106"
+    },
+    {
+      "decision": "HOLD",
       "id": "R-107"
     }
   ],
-  "policy": "initial-v1",
+  "policy": "adapted-v2",
   "schema": "ccs-016-report/v1"
 }

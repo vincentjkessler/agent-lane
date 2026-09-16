@@ -1,0 +1,67 @@
+{
+  "active_human_effort_observable": {
+    "direct_code_or_config_edits": 0,
+    "messages": 2,
+    "minutes": "not directly observable"
+  },
+  "adaptation_attempts_before_workflow": {
+    "compositional_connector_write_attempts": 1,
+    "conventional_connector_write_attempts": 1,
+    "failed_connector_write_attempts": 0
+  },
+  "correctness": "PASS",
+  "expected_fixture": "expected-adapted.json",
+  "expected_fixture_attribution": "GPT-5.6 Sol plus deterministic comparison code to be executed against both lanes; this is same-model checking and is not described as independent verification",
+  "experiment_id": "CCS-016-20260916-ADAPT1",
+  "human_message_breakdown": {
+    "challenge": 1,
+    "lane_specific_instructions": 0,
+    "provenance_correction": 1
+  },
+  "human_messages_after_freeze": 2,
+  "independence_claimed": false,
+  "lane_specific": {
+    "compositional": {
+      "code_files_touched": 0,
+      "config_files_touched": 1,
+      "correct": true,
+      "files_touched": [
+        "bci/runs/ccs-016-20260916-ADAPT1/compositional/policy.json"
+      ],
+      "implementation_files_touched": 1,
+      "lines_added": 10,
+      "lines_deleted": 2,
+      "prompt_files_touched": 0,
+      "report_digest": "79c02c18da054fe9a0aa80fbf1681b5fabd565b2be0c5ac0d8859d673180f3bb"
+    },
+    "conventional": {
+      "code_files_touched": 1,
+      "config_files_touched": 0,
+      "correct": true,
+      "files_touched": [
+        "bci/runs/ccs-016-20260916-ADAPT1/conventional/baseline.py"
+      ],
+      "implementation_files_touched": 1,
+      "lines_added": 8,
+      "lines_deleted": 2,
+      "prompt_files_touched": 0,
+      "report_digest": "79c02c18da054fe9a0aa80fbf1681b5fabd565b2be0c5ac0d8859d673180f3bb"
+    }
+  },
+  "model_usage": {
+    "challenge_authoring_assistance": "Astra 6",
+    "implementation_assistance_both_lanes": "GPT-5.6 Sol",
+    "planned_external_evaluator": "Opus 4.6",
+    "runtime_llm_calls_compositional": 0,
+    "runtime_llm_calls_conventional": 0
+  },
+  "schema": "ccs-016-adapt-measurement/v1",
+  "shared_evaluation_work": [
+    "disruption.json",
+    "expected-adapted.json",
+    "pre-adaptation-manifest.json",
+    "provenance-correction.json",
+    "adapt_harness.py",
+    ".github/workflows/ccs-016-adapt.yml"
+  ]
+}
