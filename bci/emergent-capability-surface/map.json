@@ -1,0 +1,52 @@
+{
+  "schema": "emergent-capability-surface/v1",
+  "updated_at": "2026-09-16T13:15:00-05:00",
+  "method": "Capabilities are promoted to CONFIRMED only after a reproducible controlled test with durable evidence. Documented primitives are distinguished from novel compositions.",
+  "confirmed": [
+    {
+      "id": "ECS-001",
+      "name": "BCI / progressive external iteration",
+      "status": "CONFIRMED-PREEXISTING-SPECIMEN",
+      "summary": "Ordinary ChatGPT can progressively produce, externalize, receive feedback, and revise through an external wire rather than a user-mediated ZIP loop.",
+      "evidence_note": "Established in earlier BCI benchmark runs; not re-run in this map session."
+    },
+    {
+      "id": "ECS-003",
+      "name": "Externally checkpointed cognition",
+      "status": "CONFIRMED",
+      "summary": "A cold ChatGPT context reconstructed exact task continuation from an authoritative external pointer without prior conversation state.",
+      "evidence": "bci/runs/ecs-20260916-0634/receipts/phase-3.json"
+    },
+    {
+      "id": "ECS-004",
+      "name": "Context-window virtualization",
+      "status": "CONFIRMED",
+      "summary": "Cold resumption succeeded through selective retrieval of active external state while irrelevant archived state remained unloaded.",
+      "evidence": "bci/runs/ecs-20260916-0634/receipts/phase-3.json"
+    },
+    {
+      "id": "ECS-009",
+      "name": "Ephemeral instrument factory",
+      "status": "CONFIRMED",
+      "summary": "ChatGPT authored a purpose-built executable solver and verifier during the task and consumed the externally produced output as a new task primitive.",
+      "evidence": "bci/runs/ecs-009-013-20260916-1311/receipts/final.json"
+    },
+    {
+      "id": "ECS-013",
+      "name": "CI compute transduction",
+      "status": "CONFIRMED",
+      "summary": "A connected GitHub repository plus self-authored workflow became an on-demand hosted execution substrate controlled and observed from ordinary ChatGPT.",
+      "evidence": "bci/runs/ecs-009-013-20260916-1311/receipts/final.json"
+    }
+  ],
+  "candidates": [
+    {"id": "ECS-002", "name": "Repository as transactional working memory", "status": "PARTIALLY-SUBSUMED-BY-ECS-003"},
+    {"id": "ECS-005", "name": "Protocol over arbitrary persistent storage", "status": "NEXT-CANDIDATE"},
+    {"id": "ECS-006", "name": "Event-driven ChatGPT runtime", "status": "HYPOTHESIS"},
+    {"id": "ECS-007", "name": "Human-interruptible execution", "status": "HYPOTHESIS"},
+    {"id": "ECS-008", "name": "Cross-tool transduction", "status": "HYPOTHESIS"},
+    {"id": "ECS-010", "name": "Self-verifying production loops", "status": "PARTIALLY-DEMONSTRATED-BY-ECS-009-013"},
+    {"id": "ECS-011", "name": "Capability acquisition during a task", "status": "MECHANISM-OBSERVED"},
+    {"id": "ECS-012", "name": "Applicationless application", "status": "HYPOTHESIS"}
+  ]
+}
