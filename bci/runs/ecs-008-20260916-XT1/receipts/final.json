@@ -1,0 +1,41 @@
+{
+  "schema": "ecs-capability-receipt/v1",
+  "experiment_id": "ECS-008-20260916-XT1",
+  "capability": "Cross-tool transduction",
+  "status": "CONFIRMED",
+  "initial_authoritative_substrate": "Google Docs",
+  "execution_substrate": "GitHub + GitHub Actions",
+  "return_substrate": "same Google Doc",
+  "constraints": {
+    "prior_conversation_context_used": false,
+    "codex_used": false,
+    "chatgpt_work_used": false,
+    "local_terminal_used": false,
+    "user_download_upload_loop_used": false,
+    "user_supplied_api_key_used": false
+  },
+  "github": {
+    "repository": "vincentjkessler/agent-lane",
+    "branch": "bci-wire",
+    "workflow_commit": "8833e462b9b553cfa0ca57ec94df21e425c861a6",
+    "workflow_run_id": 35134127866,
+    "workflow_job_id": 104922106736,
+    "conclusion": "success"
+  },
+  "externally_computed_result": {
+    "schema": "ecs-008-result/v1",
+    "final_x": 853980994,
+    "checkpoint_count": 50,
+    "checkpoints_sha256": "9a77b201067ff6b50c281d41dcbc6c58bd3c8ac60322fc92da6a269c2b1bd4b7",
+    "verification": "PASS"
+  },
+  "write_back": {
+    "document_id": "1Ax7W6-XfpIETJkl9tSqQmpZKQ9xkFAgg5LKb8uneylw",
+    "receipt_present_after_END_OF_STATE": true,
+    "verified_by_reread": true
+  },
+  "verdict": {
+    "ecs_008": "CONFIRMED",
+    "basis": "A cold ordinary ChatGPT conversation began from a Google Doc as the sole initial authoritative state, authored new executable artifacts on GitHub, caused GitHub Actions to compute and independently verify a result, retrieved that result, and wrote the required receipt back to the same Google Doc."
+  }
+}
