@@ -1,0 +1,15 @@
+{
+  "task_id": "ORCHID-47",
+  "revision": 12,
+  "completed_ids": ["W01", "W02", "W04", "W06"],
+  "work_units": [
+    {"id": "W03", "ordinal": 3, "status": "blocked", "depends_on": ["W07"]},
+    {"id": "W05", "ordinal": 5, "status": "ready", "depends_on": ["W01", "W02"]},
+    {"id": "W07", "ordinal": 7, "status": "ready", "depends_on": ["W04"]},
+    {"id": "W08", "ordinal": 8, "status": "ready", "depends_on": ["W05", "W06"]},
+    {"id": "W09", "ordinal": 9, "status": "pending", "depends_on": []}
+  ],
+  "dispatch_nonce": "K7P9-M2Q4",
+  "output_template": "EXECUTE {task_id}/R{revision}:{selected_id}#{dispatch_nonce}",
+  "selection_note": "Do not infer readiness from ordinal alone. A unit must have status=ready and every dependency must be in completed_ids. Among eligible units, choose the lowest ordinal."
+}
