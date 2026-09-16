@@ -1,0 +1,7 @@
+{
+  "schema": "ccs-015-trigger/v1",
+  "experiment_id": "CCS-015-20260916-BASE1",
+  "status": "RUN",
+  "policy": "FRONTIER",
+  "source_commit": "72c9af58af075baa9e73311b208d7263a8890255"
+}
