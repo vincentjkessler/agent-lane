@@ -1,6 +1,6 @@
 {
   "schema": "compositional-capability-surface/v1",
-  "updated_at": "2026-09-16T14:21:00-05:00",
+  "updated_at": "2026-09-16T18:46:26-05:00",
   "lab": "Capability Composition Laboratory",
   "surface": "Compositional Capability Surface",
   "legacy_surface": "Emergent Capability Surface",
@@ -44,11 +44,40 @@
         "policy_decision_events_required_each": 1
       },
       "interpretation": "For a deterministic structured transformation, the extra durable state, interrupt/resume machinery, and runtime verifier did not establish net practical value over a conventional one-shot Python/GitHub Actions workflow. Future value tests should target adaptation, cold continuation, evolving requirements, or recovery where those properties are actually needed."
+    },
+    {
+      "id": "CCS-016",
+      "name": "Adaptive comparative baseline after a post-freeze policy change",
+      "status": "COMPLETE-PENDING-EXTERNAL-REVIEW",
+      "evidence": "bci/runs/ccs-016-20260916-ADAPT1/final.json",
+      "challenge_provenance": "Human-supplied challenge authored with Astra 6 assistance; implementation assistance for both lanes by GPT-5.6 Sol; external evaluation planned with Opus 4.6.",
+      "result": "CONVENTIONAL_LOWER_ADAPTATION_BURDEN",
+      "measurements": {
+        "correctness_conventional": "PASS",
+        "correctness_compositional": "PASS",
+        "same_report_digest": "79c02c18da054fe9a0aa80fbf1681b5fabd565b2be0c5ac0d8859d673180f3bb",
+        "conventional_files_touched": 1,
+        "conventional_code_files_touched": 1,
+        "conventional_config_files_touched": 0,
+        "conventional_lines_added": 8,
+        "conventional_lines_deleted": 2,
+        "compositional_files_touched": 1,
+        "compositional_code_files_touched": 0,
+        "compositional_config_files_touched": 1,
+        "compositional_lines_added": 10,
+        "compositional_lines_deleted": 2,
+        "failed_workflow_attempts": 0,
+        "total_adaptation_to_durable_evidence_seconds": 152.829,
+        "human_messages_after_freeze": 2,
+        "lane_specific_human_messages": 0,
+        "runtime_llm_calls_each_lane": 0
+      },
+      "verification_boundary": "Expected outcomes and deterministic comparator were produced by GPT-5.6 Sol; no independent-verification claim is made. Opus 4.6 external review is pending.",
+      "interpretation": "The compositional lane preserved engine code and adapted through configuration only, but it did not show lower measured burden in this challenge: both lanes touched one file and passed without retries, while conventional automation required fewer changed lines. The config-only locality may become valuable across repeated or larger policy changes, but that remains unproven."
     }
   ],
   "next_experiment": {
-    "id": "CCS-016",
-    "name": "Adaptive comparative baseline",
-    "question": "When a useful task receives an unanticipated natural-language policy change after work has begun, can composition absorb the change with less code modification or manual context transfer than conventional automation while preserving verification?"
+    "status": "DEFERRED_UNTIL_OPUS_4_6_REVIEW_OF_CCS_016",
+    "reason": "Use the external methodological review to decide whether the next comparison should test repeated policy changes, schema evolution, recovery, or another task class rather than selecting the next target post hoc."
   }
 }
