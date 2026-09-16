@@ -1,0 +1,32 @@
+{
+  "schema": "compositional-capability-surface/v1",
+  "updated_at": "2026-09-16T14:18:00-05:00",
+  "lab": "Capability Composition Laboratory",
+  "surface": "Compositional Capability Surface",
+  "legacy_surface": "Emergent Capability Surface",
+  "legacy_map": "bci/emergent-capability-surface/map.json",
+  "thesis": "Ordinary consumer ChatGPT exposes a larger compositional systems surface than its individual product features suggest; the research target is the reachable higher-order behavior, measurable value over simpler baselines, and operational boundaries of compositions of documented primitives.",
+  "confirmed": [
+    {"id":"CCS-001","legacy_id":"ECS-001","name":"BCI / progressive external iteration","status":"CONFIRMED-PREEXISTING-SPECIMEN","evidence_note":"Established in earlier BCI benchmark runs."},
+    {"id":"CCS-003","legacy_id":"ECS-003","name":"Externally checkpointed cognition","status":"CONFIRMED","evidence":"bci/runs/ecs-20260916-0634/receipts/phase-3.json"},
+    {"id":"CCS-004","legacy_id":"ECS-004","name":"Context-window virtualization","status":"CONFIRMED","evidence":"bci/runs/ecs-20260916-0634/receipts/phase-3.json"},
+    {"id":"CCS-005","legacy_id":"ECS-005","name":"Protocol over persistent storage","status":"CONFIRMED","evidence":"https://docs.google.com/document/d/1erSRh-_RBlRWweCVmmstIb4IYVAbgjs4ik_mo4exabs","boundary":"Demonstrated on GitHub-backed state and a native Google Doc; not a universal arbitrary-storage claim."},
+    {"id":"CCS-006","legacy_id":"ECS-006","name":"Condition-driven ChatGPT runtime","status":"CONFIRMED-CONDITION-WATCH","evidence":"bci/runs/ecs-006b-20260916-WAKE2/receipt.json","boundary":"Scheduled condition-watch polling, not true webhook-triggered ordinary ChatGPT. Scheduled connector mutations may still be safety-gated."},
+    {"id":"CCS-007","legacy_id":"ECS-007","name":"Human-interruptible execution","status":"CONFIRMED","evidence":"bci/runs/ecs-012-20260916-APP1/receipts/final.json"},
+    {"id":"CCS-008","legacy_id":"ECS-008","name":"Cross-tool transduction","status":"CONFIRMED","evidence":"bci/runs/ecs-008-20260916-XT1/receipts/final.json"},
+    {"id":"CCS-009","legacy_id":"ECS-009","name":"Ephemeral instrument factory","status":"CONFIRMED","evidence":"bci/runs/ecs-009-013-20260916-1311/receipts/final.json"},
+    {"id":"CCS-012","legacy_id":"ECS-012","name":"Applicationless application","status":"CONFIRMED","evidence":"bci/runs/ecs-012-20260916-APP1/receipts/final.json","boundary":"Application-like behavior from composition; not a claim of a new computer-science primitive or model-level emergent capability."},
+    {"id":"CCS-013","legacy_id":"ECS-013","name":"CI compute transduction","status":"CONFIRMED","evidence":"bci/runs/ecs-009-013-20260916-1311/receipts/final.json"},
+    {"id":"CCS-014","legacy_id":"ECS-014","name":"Persistent multi-epoch runtime","status":"CONFIRMED","evidence":"bci/runs/ecs-014-20260916-ME1/receipts/final.json"}
+  ],
+  "candidates": [
+    {"id":"CCS-002","legacy_id":"ECS-002","name":"Repository as transactional working memory","status":"PARTIALLY-SUBSUMED-BY-CCS-003"},
+    {"id":"CCS-010","legacy_id":"ECS-010","name":"Self-verifying production loops","status":"PARTIALLY-DEMONSTRATED"},
+    {"id":"CCS-011","legacy_id":"ECS-011","name":"Capability acquisition during a task","status":"MECHANISM-OBSERVED"}
+  ],
+  "next_experiment": {
+    "id": "CCS-015",
+    "name": "Comparative baseline: composition versus conventional automation",
+    "question": "For the same useful deterministic release-steward task, what does the compositional approach measurably buy or cost versus a conventional Python/GitHub Actions implementation?"
+  }
+}
