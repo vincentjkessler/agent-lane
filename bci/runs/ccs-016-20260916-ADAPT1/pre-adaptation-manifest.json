@@ -1,0 +1,75 @@
+{
+  "schema": "ccs-016-pre-adaptation-manifest/v1",
+  "experiment_id": "CCS-016-20260916-ADAPT1",
+  "recorded_before_lane_edits": true,
+  "freeze_substantiated": true,
+  "freeze_source_commit": "593face0b0a4081935285b5a4a46a4c68cf05d65",
+  "frozen_artifacts": {
+    "experiment_specification": {
+      "path": "bci/runs/ccs-016-20260916-ADAPT1/PROTOCOL.md",
+      "git_blob_sha": "66c0cddedfa2db73e8e7fa271c4335862aea8b5a"
+    },
+    "runtime_model_prompt": null,
+    "runtime_model_prompt_note": "No LLM prompt was executed inside either frozen lane. PROTOCOL.md is the frozen human-readable experiment specification; the conventional lane is code-only and the compositional lane is code plus policy configuration.",
+    "input": {
+      "path": "bci/runs/ccs-016-20260916-ADAPT1/input/releases.json",
+      "git_blob_sha": "f30569a02aa38d1aad57170c8a2d31baa6980556"
+    },
+    "conventional_source": {
+      "path": "bci/runs/ccs-016-20260916-ADAPT1/conventional/baseline.py",
+      "git_blob_sha": "934ddc677d990c9922412dd19d8d0deba4c8e981",
+      "sha256_recorded_by_freeze": "84c94513c26732b22cb37b08bc1eb990fb225f5dd4bcc232254093cd5c1bccd0"
+    },
+    "compositional_source": {
+      "path": "bci/runs/ccs-016-20260916-ADAPT1/compositional/engine.py",
+      "git_blob_sha": "a3ef5079eface4952af7df880aa113b0b5f6f273",
+      "sha256_recorded_by_freeze": "03fe448a574eed0b74a9a277dd8c23c314764898ab1b5a0610b942c6b1866c6f"
+    },
+    "compositional_configuration": {
+      "path": "bci/runs/ccs-016-20260916-ADAPT1/compositional/policy.json",
+      "git_blob_sha": "5e4a7be4b06c8a638e0b76a38a6c76e83601b630",
+      "sha256_recorded_by_freeze": "cd0b250422d386d1604b8e2fe65fbdc7d70adef483976921f2b4d1117e2d2c76"
+    },
+    "shared_freeze_harness": {
+      "path": "bci/runs/ccs-016-20260916-ADAPT1/freeze_harness.py",
+      "git_blob_sha": "49a5730d82877cd725b07326abe40c81618608b6"
+    },
+    "freeze_workflow": {
+      "path": ".github/workflows/ccs-016-freeze.yml",
+      "git_blob_sha": "7ffa554fc3f5d0b655342cd7198001eaf023da42"
+    }
+  },
+  "freeze_evidence": {
+    "disruption_present_at_freeze": false,
+    "initial_outputs_semantically_identical": true,
+    "initial_report_digest": "e33df0bc0828ed592fbe1c2b048987c922c0b52e46dbe13e417d25c34b827072",
+    "freeze_workflow_run_id": 35140774952,
+    "freeze_workflow_job_id": 104944447241,
+    "freeze_workflow_conclusion": "success"
+  },
+  "comparison_rules": {
+    "correctness_first": true,
+    "same_original_inputs": true,
+    "same_disruption_semantics": true,
+    "same_expected_fixture": "bci/runs/ccs-016-20260916-ADAPT1/expected-adapted.json",
+    "same_implementation_assistance": "GPT-5.6 Sol applies both adaptations within the same assistant turn",
+    "metrics": [
+      "files touched",
+      "lines added",
+      "lines deleted",
+      "human messages exchanged after freeze",
+      "failed attempts before success",
+      "successful workflow runs",
+      "execution time",
+      "adaptation time",
+      "active human effort",
+      "model usage",
+      "code changes",
+      "prompt changes",
+      "configuration changes"
+    ],
+    "timing_rule": "GitHub workflow timestamps are authoritative for execution time. End-to-end adaptation timing is anchored to durable GitHub commits because conversational latency is not a precise benchmark clock.",
+    "verification_attribution": "Expected outcomes are created and checked by GPT-5.6 Sol plus deterministic comparison code; no independence claim is made.",
+    "shared_evaluation_work_must_be_separated": true
+  }
+}
