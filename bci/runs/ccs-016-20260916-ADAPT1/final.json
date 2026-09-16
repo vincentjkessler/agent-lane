@@ -1,0 +1,114 @@
+{
+  "schema": "ccs-016-final/v1",
+  "experiment_id": "CCS-016-20260916-ADAPT1",
+  "status": "PASS-COMPARISON-COMPLETE-PENDING-EXTERNAL-REVIEW",
+  "pass_meaning": "The controlled comparison completed and both lanes were checked against the same pre-edit expected fixture. PASS does not mean the compositional lane won.",
+  "challenge_provenance": {
+    "supplied_by": "human principal investigator",
+    "challenge_authoring_assistance": "Astra 6",
+    "implementation_assistance_both_lanes": "GPT-5.6 Sol",
+    "planned_external_evaluator": "Opus 4.6",
+    "provenance_correction": "provenance-correction.json",
+    "note": "The first disruption metadata incorrectly attributed challenge assistance to Codex; the correction is preserved as an audit event."
+  },
+  "freeze": {
+    "substantiated": true,
+    "source_commit": "593face0b0a4081935285b5a4a46a4c68cf05d65",
+    "disruption_present_at_freeze": false,
+    "initial_outputs_semantically_identical": true,
+    "initial_report_digest": "e33df0bc0828ed592fbe1c2b048987c922c0b52e46dbe13e417d25c34b827072",
+    "pre_adaptation_manifest": "pre-adaptation-manifest.json"
+  },
+  "policy_mapping": {
+    "low_customer_impact_encoding": "none",
+    "recognized_customer_impact_values": ["none", "minor", "major"],
+    "docs_ready_requirement": "boolean true",
+    "owner_ack_requirement": "boolean true unless customer_impact is none",
+    "original_requirements_preserved": ["tests_passed=true", "security_review=pass", "rollback_ready=true"],
+    "missing_or_unrecognized_customer_impact": "HOLD"
+  },
+  "expected_outcomes": {
+    "created_by": "GPT-5.6 Sol from the human-supplied Astra-6-assisted challenge and frozen records",
+    "checked_by": "GPT-5.6 Sol-authored deterministic comparator",
+    "independent_verification_claimed": false,
+    "planned_external_evaluation": "Opus 4.6",
+    "approve": ["R-105", "R-108"],
+    "hold": ["R-101", "R-102", "R-103", "R-104", "R-106", "R-107"],
+    "fixture": "expected-adapted.json"
+  },
+  "correctness": {
+    "conventional": "PASS",
+    "compositional": "PASS",
+    "same_report_digest": true,
+    "report_digest": "79c02c18da054fe9a0aa80fbf1681b5fabd565b2be0c5ac0d8859d673180f3bb",
+    "comparison_workflow_run_id": 35163743714,
+    "comparison_workflow_job_id": 105020083808,
+    "workflow_attempts": 1,
+    "failed_workflow_attempts": 0
+  },
+  "adaptation_changes": {
+    "conventional": {
+      "implementation_files_touched": 1,
+      "code_files_touched": 1,
+      "config_files_touched": 0,
+      "prompt_files_touched": 0,
+      "lines_added": 8,
+      "lines_deleted": 2,
+      "line_churn": 10,
+      "adaptation_commit": "0a87a8618ad919eebda4a9388cb582b9d9f3495e",
+      "connector_write_attempts": 1,
+      "failed_connector_write_attempts": 0
+    },
+    "compositional": {
+      "implementation_files_touched": 1,
+      "code_files_touched": 0,
+      "config_files_touched": 1,
+      "prompt_files_touched": 0,
+      "lines_added": 10,
+      "lines_deleted": 2,
+      "line_churn": 12,
+      "adaptation_commit": "8b86de2591c59ac4e6252f0023f0a422999867ff",
+      "connector_write_attempts": 1,
+      "failed_connector_write_attempts": 0
+    }
+  },
+  "timing": {
+    "durable_disruption_commit_time_utc": "2026-09-16T23:43:54Z",
+    "comparison_runner_start_utc": "2026-09-16T23:46:23.9218596Z",
+    "verified_pass_log_time_utc": "2026-09-16T23:46:25.5881549Z",
+    "durable_evidence_push_time_utc": "2026-09-16T23:46:26.8287506Z",
+    "total_adaptation_to_durable_evidence_seconds": 152.829,
+    "execution_seconds_approx": {
+      "conventional_lane": 0.044,
+      "compositional_lane": 0.041,
+      "shared_correctness_and_diff_harness": 0.041
+    },
+    "lane_specific_adaptation_time_comparison": "not treated as valid because the two adaptations were authored sequentially in the same assistant turn, creating order bias"
+  },
+  "human_effort": {
+    "substantive_challenge_messages": 1,
+    "provenance_correction_messages": 1,
+    "total_human_messages_after_freeze": 2,
+    "lane_specific_human_messages": 0,
+    "direct_human_code_or_config_edits": 0,
+    "active_minutes": "not directly observable and therefore not fabricated"
+  },
+  "model_usage": {
+    "Astra_6": "challenge-authoring assistance as reported by the human",
+    "GPT_5_6_Sol": "same implementation assistance for both lanes; expected-fixture derivation; deterministic comparator authoring",
+    "runtime_llm_calls_conventional": 0,
+    "runtime_llm_calls_compositional": 0,
+    "Opus_4_6": "planned external evaluator; evaluation not yet incorporated"
+  },
+  "shared_evaluation_work": [
+    "disruption.json",
+    "expected-adapted.json",
+    "pre-adaptation-manifest.json",
+    "provenance-correction.json",
+    "adapt_harness.py",
+    ".github/workflows/ccs-016-adapt.yml"
+  ],
+  "observed_result": "CONVENTIONAL_LOWER_ADAPTATION_BURDEN",
+  "result_basis": "Both lanes were correct on the same fixture and succeeded without retries. Both touched one implementation file and required no lane-specific human message. Conventional automation required 10 changed lines in code versus 12 changed lines in compositional configuration. The compositional lane preserved engine code unchanged, which is a real locality/modularity property, but this challenge did not demonstrate lower measured adaptation burden.",
+  "interpretation": "CCS-016 does not support the hypothesis that the compositional architecture reduces adaptation burden for this policy change. Its config-only adaptation may matter under repeated or larger changes, but that value was not established here and should be tested rather than assumed."
+}
