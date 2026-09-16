@@ -5,12 +5,13 @@
   ],
   "analysis_sha256": "c43199b907d66fdd56c122a27ca7fb675e77ecae975cffa79c457e9cafb01400",
   "experiment_id": "ECS-012-20260916-APP1",
-  "human_interrupt_applied": false,
-  "release_sha256": null,
+  "human_interrupt_applied": true,
+  "release_sha256": "3b552c88e0352f2bc8dc6fd2723267a9847bac65ee2ffbcb07fa7aa6a5bee459",
   "schema": "ecs-012-state/v1",
-  "selected_steer": null,
+  "selected_steer": "FRONTIER",
   "source_map_sha256": "74375d201775560e318cb6e7992a806f3e8d8b0509f6babc7736b80946d2c77c",
-  "stage": 1,
+  "stage": 2,
   "stage1_workflow_run_id": "35138405247",
-  "status": "AWAITING_HUMAN_STEER"
+  "stage2_workflow_run_id": "35138660013",
+  "status": "COMPLETE"
 }
