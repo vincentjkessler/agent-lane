@@ -1,0 +1,7 @@
+{
+  "seed": 917431,
+  "modulus": 2147483647,
+  "multiplier": 48271,
+  "iterations": 50000,
+  "checkpoint_interval": 997
+}
