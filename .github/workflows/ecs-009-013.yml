@@ -1,0 +1,36 @@
+name: ECS 009 013 capability bootstrap
+
+on:
+  push:
+    branches:
+      - bci-wire
+    paths:
+      - '.github/workflows/ecs-009-013.yml'
+      - 'bci/runs/ecs-009-013-20260916-1311/**'
+
+permissions:
+  contents: read
+
+jobs:
+  execute-instrument:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout experimental branch
+        uses: actions/checkout@v4
+
+      - name: Execute purpose-built instrument
+        run: |
+          python3 bci/runs/ecs-009-013-20260916-1311/solve.py \
+            bci/runs/ecs-009-013-20260916-1311/challenge.json \
+            /tmp/ecs-result.json
+
+      - name: Independently verify instrument output
+        run: |
+          python3 bci/runs/ecs-009-013-20260916-1311/verify.py \
+            bci/runs/ecs-009-013-20260916-1311/challenge.json \
+            /tmp/ecs-result.json
+
+      - name: Emit machine-readable receipt
+        run: |
+          echo 'ECS_REMOTE_COMPUTE=PASS'
+          cat /tmp/ecs-result.json
