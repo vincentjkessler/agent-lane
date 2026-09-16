@@ -1,0 +1,28 @@
+{
+  "experiment_id": "ECS-003-004-20260916-0634",
+  "phase": 2,
+  "kind": "same-chat selective replay",
+  "inputs_fetched_for_replay": [
+    "state.json",
+    "task-manifest.json",
+    "shards/active.json"
+  ],
+  "inputs_intentionally_not_fetched_for_replay": [
+    "shards/archive-001.json",
+    "shards/archive-002.json"
+  ],
+  "selection_evaluation": {
+    "W03": "ineligible: status=blocked",
+    "W05": "eligible: status=ready; dependencies W01 and W02 are completed",
+    "W07": "eligible but ordinal 7 is later than W05 ordinal 5",
+    "W08": "ineligible: dependency W05 is not completed",
+    "W09": "ineligible: status=pending"
+  },
+  "selected_id": "W05",
+  "dispatch": "EXECUTE ORCHID-47/R12:W05#K7P9-M2Q4",
+  "expected_result": "Select W05 and emit the exact dispatch string without retrieving either archive shard.",
+  "observed_result": "W05 selected and exact dispatch string derived after fetching only state.json, task-manifest.json, and shards/active.json during the replay pass.",
+  "verdict": "PROVISIONAL_PASS",
+  "qualification": "This is not sufficient to confirm ECS-003 or ECS-004 because the replay occurred in the same conversation that authored the test and therefore prior context still exists. A cold-context replay is required.",
+  "next_action": "Run Phase 3 from a genuinely cold ChatGPT context using only the resume pointer: vincentjkessler/agent-lane@bci-wire:bci/runs/ecs-20260916-0634/state.json"
+}
