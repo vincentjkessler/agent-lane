@@ -1,0 +1,9 @@
+{
+  "archive": true,
+  "range": "historical-units-WA01-WA40",
+  "note": "Deliberately irrelevant to the next operation. A correct selective-resume implementation should not need to retrieve this shard.",
+  "records": [
+    {"id":"WA01","result":"complete"}, {"id":"WA02","result":"complete"}, {"id":"WA03","result":"complete"}, {"id":"WA04","result":"complete"},
+    {"id":"WA05","result":"complete"}, {"id":"WA06","result":"complete"}, {"id":"WA07","result":"complete"}, {"id":"WA08","result":"complete"}
+  ]
+}
