@@ -1,1 +1,16 @@
-{"schema":"ecs-012-state/v1","experiment_id":"ECS-012-20260916-APP1","status":"WAITING_FOR_STAGE1_TRIGGER","stage":0,"human_interrupt_applied":false,"selected_steer":null,"analysis_sha256":null,"release_sha256":null}
+{
+  "allowed_steers": [
+    "CONSERVATIVE",
+    "FRONTIER"
+  ],
+  "analysis_sha256": "c43199b907d66fdd56c122a27ca7fb675e77ecae975cffa79c457e9cafb01400",
+  "experiment_id": "ECS-012-20260916-APP1",
+  "human_interrupt_applied": false,
+  "release_sha256": null,
+  "schema": "ecs-012-state/v1",
+  "selected_steer": null,
+  "source_map_sha256": "74375d201775560e318cb6e7992a806f3e8d8b0509f6babc7736b80946d2c77c",
+  "stage": 1,
+  "stage1_workflow_run_id": "35138405247",
+  "status": "AWAITING_HUMAN_STEER"
+}
