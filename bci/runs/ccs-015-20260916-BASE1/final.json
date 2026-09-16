@@ -1,0 +1,31 @@
+{
+  "schema": "ccs-comparative-receipt/v1",
+  "experiment_id": "CCS-015-20260916-BASE1",
+  "status": "PASS",
+  "pass_meaning": "The comparison was reproducible and honestly reported; PASS does not mean the compositional approach won.",
+  "baseline_workflow_run_id": 35139942275,
+  "baseline_workflow_job_id": 104941658664,
+  "baseline_conclusion": "success",
+  "output_exact_semantic_match": true,
+  "reference_release_sha256": "3b552c88e0352f2bc8dc6fd2723267a9847bac65ee2ffbcb07fa7aa6a5bee459",
+  "baseline_release_sha256": "3b552c88e0352f2bc8dc6fd2723267a9847bac65ee2ffbcb07fa7aa6a5bee459",
+  "compositional": {
+    "implementation_files": 4,
+    "implementation_loc": 317,
+    "required_successful_workflow_stages": 2,
+    "observed_workflow_attempts": 3,
+    "policy_decision_events_required": 1,
+    "explicit_durable_human_interrupt": true,
+    "independent_runtime_verifier": true
+  },
+  "conventional_baseline": {
+    "implementation_files": 2,
+    "implementation_loc": 81,
+    "required_successful_workflow_stages": 1,
+    "observed_workflow_attempts": 1,
+    "policy_decision_events_required": 1,
+    "explicit_durable_human_interrupt": false
+  },
+  "verdict": "CONVENTIONAL_AUTOMATION_SIMPLER_FOR_THIS_DETERMINISTIC_TASK",
+  "implication": "CCS value claims must be task-class-specific. Deterministic transformations should default to conventional automation unless persistence, interruption, semantic adaptation, recovery, or other compositional properties are actually required."
+}
