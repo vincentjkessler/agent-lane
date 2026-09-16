@@ -1,0 +1,69 @@
+name: ECS-012 Applicationless Release Steward
+
+on:
+  push:
+    branches: [bci-wire]
+    paths:
+      - 'bci/runs/ecs-012-20260916-APP1/trigger-stage1.json'
+      - 'bci/runs/ecs-012-20260916-APP1/steer.json'
+
+permissions:
+  contents: write
+
+jobs:
+  release-steward:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run correct durable stage
+        id: stage
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT='bci/runs/ecs-012-20260916-APP1'
+          STATUS=$(python3 - <<'PY'
+          import json
+          print(json.load(open('bci/runs/ecs-012-20260916-APP1/state.json'))['status'])
+          PY
+          )
+          if [ "$STATUS" = 'WAITING_FOR_STAGE1_TRIGGER' ]; then
+            test -f "$ROOT/trigger-stage1.json"
+            python3 "$ROOT/collect.py"
+            python3 "$ROOT/verify.py" stage1
+            echo 'phase=stage1' >> "$GITHUB_OUTPUT"
+          elif [ "$STATUS" = 'AWAITING_HUMAN_STEER' ]; then
+            test -f "$ROOT/steer.json"
+            python3 "$ROOT/render.py"
+            python3 "$ROOT/verify.py" stage2
+            echo 'phase=stage2' >> "$GITHUB_OUTPUT"
+          else
+            echo "Refusing unexpected state: $STATUS" >&2
+            exit 1
+          fi
+
+      - name: Commit durable application state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'ecs-runtime'
+          git config user.email 'ecs-runtime@users.noreply.github.com'
+          git add bci/runs/ecs-012-20260916-APP1
+          if git diff --cached --quiet; then
+            echo 'No generated changes to commit' >&2
+            exit 1
+          fi
+          git commit -m "ECS-012 ${{ steps.stage.outputs.phase }} durable transition"
+          git push origin HEAD:bci-wire
+
+      - name: Print durable stage marker
+        shell: bash
+        run: |
+          if [ '${{ steps.stage.outputs.phase }}' = 'stage1' ]; then
+            echo 'ECS012_DURABLE_STATE=AWAITING_HUMAN_STEER'
+          else
+            echo 'ECS012_DURABLE_STATE=COMPLETE'
+          fi
