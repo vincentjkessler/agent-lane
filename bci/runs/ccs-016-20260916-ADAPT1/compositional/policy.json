@@ -1,6 +1,6 @@
 {
   "schema": "ccs-016-policy/v1",
-  "policy_id": "initial-v1",
+  "policy_id": "adapted-v2",
   "rules": [
     {
       "decision": "APPROVE",
@@ -8,7 +8,15 @@
         "all": [
           {"field":"tests_passed","op":"eq","value":true},
           {"field":"security_review","op":"eq","value":"pass"},
-          {"field":"rollback_ready","op":"eq","value":true}
+          {"field":"rollback_ready","op":"eq","value":true},
+          {"field":"docs_ready","op":"eq","value":true},
+          {"field":"customer_impact","op":"in","value":["none","minor","major"]},
+          {
+            "any": [
+              {"field":"customer_impact","op":"eq","value":"none"},
+              {"field":"owner_ack","op":"eq","value":true}
+            ]
+          }
         ]
       }
     }
