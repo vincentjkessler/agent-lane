@@ -1,0 +1,34 @@
+name: ECS 006B autonomous wake
+
+on:
+  push:
+    branches:
+      - bci-wire
+    paths:
+      - 'bci/runs/ecs-006b-20260916-WAKE2/trigger.json'
+
+permissions:
+  contents: write
+
+jobs:
+  compute-verify-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout trigger commit
+        uses: actions/checkout@v4
+        with:
+          ref: bci-wire
+          fetch-depth: 0
+      - name: Compute
+        run: python3 bci/runs/ecs-006b-20260916-WAKE2/compute.py
+      - name: Independently verify
+        run: python3 bci/runs/ecs-006b-20260916-WAKE2/verify.py
+      - name: Finalize durable state
+        run: python3 bci/runs/ecs-006b-20260916-WAKE2/finalize.py
+      - name: Commit durable receipt and state
+        run: |
+          git config user.name "ecs-006b-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add bci/runs/ecs-006b-20260916-WAKE2/receipt.json bci/runs/ecs-006b-20260916-WAKE2/state.json
+          git commit -m "ECS-006B: commit verified autonomous state transition"
+          git push origin HEAD:bci-wire
