@@ -1,0 +1,74 @@
+{
+  "schema": "ecs-capability-receipt/v1",
+  "experiment_id": "ECS-014-20260916-ME1",
+  "capability": "Persistent multi-epoch runtime",
+  "status": "CONFIRMED",
+  "authoritative_state_document": "https://docs.google.com/document/d/1IG15waqIUTZIgztim4XTqBlCNkBMnLskoj6IvevHsRM",
+  "constraints": {
+    "cold_chat_count": 3,
+    "epochs_per_chat": 1,
+    "prior_conversation_context_used": false,
+    "codex_used": false,
+    "chatgpt_work_used": false,
+    "local_terminal_used": false,
+    "user_download_upload_loop_used": false,
+    "user_supplied_api_key_used": false
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "input_seed": 731927,
+      "workflow_commit": "dcc645011207741414041b23dd65bb51fa03269c",
+      "workflow_run_id": 35134756052,
+      "workflow_job_id": 104924235530,
+      "workflow_conclusion": "success",
+      "final_x": 2032111394,
+      "checkpoint_count": 43,
+      "checkpoint_sha256": "3c5364f873f1edcb4ad6a923a2f0393fe8c214efdd19cb2efcc9a6595554ff4e",
+      "verification": "PASS",
+      "derived_next_seed": 1162703555
+    },
+    {
+      "epoch": 2,
+      "input_seed": 1162703555,
+      "workflow_commit": "3351da1200fce548ba6de8f15c6ca0ea8271faad",
+      "workflow_run_id": 35135201393,
+      "workflow_job_id": 104925725788,
+      "workflow_conclusion": "success",
+      "final_x": 2028238753,
+      "checkpoint_count": 46,
+      "checkpoint_sha256": "3f3c12918a21ea808269c8845730e02020ce7d7d12df3365019038b46be93c10",
+      "verification": "PASS",
+      "derived_next_seed": 1205556994
+    },
+    {
+      "epoch": 3,
+      "input_seed": 1205556994,
+      "workflow_commit": "3603be9e4f47d5d450a36edae1c66c679176683f",
+      "workflow_run_id": 35135611509,
+      "workflow_job_id": 104927098572,
+      "workflow_conclusion": "success",
+      "final_x": 1851465913,
+      "checkpoint_count": 49,
+      "checkpoint_sha256": "5b3c851e8e8d234ecfeb95a55f4dba8f9e46fd0891ca279255fab492366fd267",
+      "verification": "PASS",
+      "derived_next_seed": null
+    }
+  ],
+  "independent_chain_checks": {
+    "epoch_1_to_2_next_seed_recomputed": 1162703555,
+    "epoch_2_to_3_next_seed_recomputed": 1205556994,
+    "chain_invariant": "PASS"
+  },
+  "final_runtime_state": {
+    "completed_epoch": 3,
+    "next_epoch": null,
+    "next_seed": null,
+    "previous_result_sha256": "5b3c851e8e8d234ecfeb95a55f4dba8f9e46fd0891ca279255fab492366fd267",
+    "status": "COMPLETE"
+  },
+  "verdict": {
+    "ecs_014": "CONFIRMED",
+    "basis": "Three separate cold ordinary ChatGPT conversations each processed exactly one externally verified epoch from the same evolving authoritative Google Doc. Epoch 2 consumed state derived from Epoch 1, Epoch 3 consumed state derived from Epoch 2, all hosted GitHub Actions runs and independent verifiers passed, and the authoritative runtime state ended COMPLETE."
+  }
+}
