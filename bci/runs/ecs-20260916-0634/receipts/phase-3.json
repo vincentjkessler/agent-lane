@@ -1,0 +1,43 @@
+{
+  "schema": "ecs-phase-receipt/v1",
+  "experiment_id": "ECS-003-004-20260916-0634",
+  "phase": 3,
+  "inputs": {
+    "resume_pointer": "vincentjkessler/agent-lane@bci-wire:bci/runs/ecs-20260916-0634/state.json",
+    "authoritative_state": "state.json",
+    "files_retrieved": [
+      "state.json",
+      "COLD_START.md",
+      "task-manifest.json",
+      "shards/active.json"
+    ],
+    "archive_files_retrieved": [],
+    "prior_conversation_context_used": false
+  },
+  "operation": {
+    "rule": "Choose the lowest ordinal work unit with status=ready whose dependency IDs are all present in completed_ids, then render the active shard output_template exactly.",
+    "eligible_units": ["W05", "W07"],
+    "selected_id": "W05",
+    "dispatch": "EXECUTE ORCHID-47/R12:W05#K7P9-M2Q4"
+  },
+  "expected_result": {
+    "selected_id": "W05",
+    "dispatch": "EXECUTE ORCHID-47/R12:W05#K7P9-M2Q4",
+    "archive_fetches": 0
+  },
+  "observed_result": {
+    "selected_id": "W05",
+    "dispatch": "EXECUTE ORCHID-47/R12:W05#K7P9-M2Q4",
+    "archive_fetches": 0,
+    "material_contradiction": false,
+    "external_state_sufficient": true,
+    "hidden_prior_context_required": false
+  },
+  "verdict": {
+    "phase_3": "PASS",
+    "ecs_003": "PASS",
+    "ecs_004": "PASS",
+    "basis": "The continuation was reconstructed exactly from the authoritative external pointer and selectively retrieved active state. No archived shard or prior conversational task state was needed."
+  },
+  "recorded_at": "2026-09-16T08:18:00-05:00"
+}
