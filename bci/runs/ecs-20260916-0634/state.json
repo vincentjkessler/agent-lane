@@ -1,7 +1,7 @@
 {
   "experiment_id": "ECS-003-004-20260916-0634",
   "title": "Externally Checkpointed Cognition / Context-Window Virtualization",
-  "status": "phase-1-initialized",
+  "status": "phase-2-provisional-pass-phase-3-required",
   "authoritative_state": true,
   "objective": "Determine whether an ordinary ChatGPT conversation can externalize enough structured task state to resume a nontrivial workflow from a compact external pointer rather than relying on the full conversational transcript.",
   "hypotheses": [
@@ -16,20 +16,40 @@
     "rule": "On resumption, treat this file and referenced artifacts as authoritative. Do not reconstruct operational state from chat memory except to locate this pointer.",
     "advance_rule": "A phase advances only after a written receipt records inputs, operation, expected result, observed result, and verdict."
   },
-  "current_phase": 1,
+  "current_phase": 3,
   "completed": [
     "Selected ECS-003 and ECS-004 as first controlled capability tests.",
     "Confirmed repository access and existing bci-wire branch.",
-    "Created authoritative external state ledger."
+    "Created authoritative external state ledger.",
+    "Created task-manifest.json with an active shard and two intentionally irrelevant archive shards.",
+    "Performed same-chat selective replay by fetching state.json, task-manifest.json, and shards/active.json only.",
+    "Correctly selected W05 and derived dispatch EXECUTE ORCHID-47/R12:W05#K7P9-M2Q4.",
+    "Recorded Phase 2 receipt as PROVISIONAL_PASS because same-chat context contamination cannot be excluded.",
+    "Created COLD_START.md for a genuinely cold replay."
   ],
-  "next_action": "Create a payload containing a synthetic multi-step task whose exact continuation is encoded externally, then produce a checkpoint receipt and verify that the external files alone specify the next operation.",
+  "artifacts": {
+    "manifest": "task-manifest.json",
+    "active_shard": "shards/active.json",
+    "archives": ["shards/archive-001.json", "shards/archive-002.json"],
+    "phase_2_receipt": "receipts/phase-2.json",
+    "cold_start_instruction": "COLD_START.md"
+  },
+  "next_action": "In a genuinely cold ChatGPT context, begin from only the resume_pointer, follow external references, retrieve only necessary task state, derive the continuation operation, and record receipts/phase-3.json.",
+  "phase_2_observed": {
+    "selected_id": "W05",
+    "dispatch": "EXECUTE ORCHID-47/R12:W05#K7P9-M2Q4",
+    "replay_files_fetched": ["state.json", "task-manifest.json", "shards/active.json"],
+    "archive_files_fetched_during_replay": [],
+    "verdict": "PROVISIONAL_PASS"
+  },
   "acceptance": {
-    "phase_1": "External ledger exists and can be fetched independently.",
-    "phase_2": "A synthetic task can be resumed correctly using only the external task package plus a compact pointer.",
-    "phase_3": "A genuinely cold context (new chat or isolated execution context) resumes correctly from the pointer without hidden transcript dependence.",
+    "phase_1": "PASS: external ledger exists and was fetched independently.",
+    "phase_2": "PROVISIONAL_PASS: synthetic task resumed correctly through selective retrieval, but same-chat context remains available.",
+    "phase_3": "A genuinely cold context must resume correctly from the pointer without hidden transcript dependence.",
     "ecs_003_pass": "Phase 3 succeeds with exact state reconstruction and no material contradiction.",
     "ecs_004_pass": "The cold context retrieves only the task state needed for the current operation while larger state remains external, and still completes correctly."
   },
-  "evidence_policy": "Do not call ECS-003 or ECS-004 confirmed before the cold-context phase. Same-chat replay is provisional because the model still has access to prior conversational context.",
-  "created_at": "2026-09-16T06:34:00-05:00"
+  "evidence_policy": "Do not call ECS-003 or ECS-004 confirmed before Phase 3. Same-chat replay is provisional because the model still has access to prior conversational context.",
+  "created_at": "2026-09-16T06:34:00-05:00",
+  "last_updated_at": "2026-09-16T06:34:00-05:00"
 }
