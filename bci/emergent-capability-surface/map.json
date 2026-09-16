@@ -1,6 +1,6 @@
 {
   "schema": "emergent-capability-surface/v1",
-  "updated_at": "2026-09-16T13:25:00-05:00",
+  "updated_at": "2026-09-16T13:40:00-05:00",
   "method": "Capabilities are promoted to CONFIRMED only after a reproducible controlled test with durable evidence. Documented primitives are distinguished from novel compositions.",
   "confirmed": [
     {
@@ -36,16 +36,7 @@
       "name": "Cross-tool transduction",
       "status": "CONFIRMED",
       "summary": "A cold ChatGPT conversation began from authoritative Google Doc state, translated it into newly authored GitHub executable artifacts, caused GitHub Actions to compute and independently verify a result, retrieved that external result, and wrote the receipt back to the original Google Doc.",
-      "evidence": "bci/runs/ecs-008-20260916-XT1/receipts/final.json",
-      "verified_result": {
-        "workflow_commit": "8833e462b9b553cfa0ca57ec94df21e425c861a6",
-        "workflow_run_id": 35134127866,
-        "workflow_job_id": 104922106736,
-        "final_x": 853980994,
-        "checkpoint_count": 50,
-        "checkpoints_sha256": "9a77b201067ff6b50c281d41dcbc6c58bd3c8ac60322fc92da6a269c2b1bd4b7",
-        "verification": "PASS"
-      }
+      "evidence": "bci/runs/ecs-008-20260916-XT1/receipts/final.json"
     },
     {
       "id": "ECS-009",
@@ -60,16 +51,31 @@
       "status": "CONFIRMED",
       "summary": "A connected GitHub repository plus self-authored workflow became an on-demand hosted execution substrate controlled and observed from ordinary ChatGPT.",
       "evidence": "bci/runs/ecs-009-013-20260916-1311/receipts/final.json"
+    },
+    {
+      "id": "ECS-014",
+      "name": "Persistent multi-epoch runtime",
+      "status": "CONFIRMED",
+      "summary": "Three separate cold ordinary ChatGPT conversations advanced one evolving externally stored runtime across three sequential epochs. Each later epoch consumed the prior epoch's externally derived state, all hosted computations and independent verifiers passed, and the final authoritative state closed as COMPLETE.",
+      "evidence": "bci/runs/ecs-014-20260916-ME1/receipts/final.json",
+      "verified_chain": {
+        "epoch_1_input_seed": 731927,
+        "epoch_1_next_seed": 1162703555,
+        "epoch_2_input_seed": 1162703555,
+        "epoch_2_next_seed": 1205556994,
+        "epoch_3_input_seed": 1205556994,
+        "final_status": "COMPLETE",
+        "chain_invariant": "PASS"
+      }
     }
   ],
   "candidates": [
     {"id": "ECS-002", "name": "Repository as transactional working memory", "status": "PARTIALLY-SUBSUMED-BY-ECS-003"},
     {"id": "ECS-006", "name": "Event-driven ChatGPT runtime", "status": "HYPOTHESIS"},
     {"id": "ECS-007", "name": "Human-interruptible execution", "status": "HYPOTHESIS"},
-    {"id": "ECS-010", "name": "Self-verifying production loops", "status": "PARTIALLY-DEMONSTRATED-BY-ECS-009-013"},
+    {"id": "ECS-010", "name": "Self-verifying production loops", "status": "PARTIALLY-DEMONSTRATED-BY-ECS-009-013-014"},
     {"id": "ECS-011", "name": "Capability acquisition during a task", "status": "MECHANISM-OBSERVED"},
-    {"id": "ECS-012", "name": "Applicationless application", "status": "STRONGLY-SUGGESTED-BY-ECS-008"},
-    {"id": "ECS-014", "name": "Persistent multi-epoch runtime", "status": "NEXT-CANDIDATE"}
+    {"id": "ECS-012", "name": "Applicationless application", "status": "STRONGLY-SUGGESTED-BY-ECS-008-014"}
   ],
-  "emerging_pattern": "Confirmed behavior now spans cold-context state restoration, selective context virtualization, substrate-independent persistent protocols, self-authored remote execution, and closed-loop state transduction across unrelated systems. The next unresolved question is whether these capabilities remain coherent across multiple sequential cold executions against one evolving state machine rather than a single-shot run."
+  "emerging_pattern": "Confirmed behavior now spans cold-context state restoration, selective context virtualization, substrate-independent persistent protocols, self-authored remote execution, closed-loop transduction across unrelated systems, and coherent multi-epoch state progression across separate cold conversations. The strongest remaining architectural question is whether the same pattern can become event-driven or condition-driven without a user manually initiating each epoch."
 }
