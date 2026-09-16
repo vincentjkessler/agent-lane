@@ -1,0 +1,8 @@
+{
+  "schema": "ecs-006b-input/v1",
+  "seed": 884211,
+  "modulus": 2147483647,
+  "multiplier": 48271,
+  "iterations": 61000,
+  "checkpoint_interval": 1009
+}
