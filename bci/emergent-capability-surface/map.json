@@ -1,6 +1,6 @@
 {
   "schema": "emergent-capability-surface/v1",
-  "updated_at": "2026-09-16T13:40:00-05:00",
+  "updated_at": "2026-09-16T13:58:30-05:00",
   "method": "Capabilities are promoted to CONFIRMED only after a reproducible controlled test with durable evidence. Documented primitives are distinguished from novel compositions.",
   "confirmed": [
     {
@@ -30,6 +30,24 @@
       "status": "CONFIRMED",
       "summary": "A native Google Doc served as the sole authoritative protocol/state substrate for a cold ChatGPT continuation, including deterministic selection, exact dispatch, and an appended execution receipt, without GitHub or prior task-conversation state.",
       "evidence": "https://docs.google.com/document/d/1erSRh-_RBlRWweCVmmstIb4IYVAbgjs4ik_mo4exabs"
+    },
+    {
+      "id": "ECS-006",
+      "name": "Event-driven ChatGPT runtime",
+      "status": "CONFIRMED-CONDITION-WATCH",
+      "summary": "Ordinary Scheduled ChatGPT autonomously woke on a condition-watch cadence after an externally driven runtime transition, read and verified the durable GitHub state and hosted-run evidence, and produced the completion notification without a user manually initiating that observer run.",
+      "evidence": "bci/runs/ecs-006b-20260916-WAKE2/receipt.json",
+      "verified_observer": {
+        "scheduled_run_time_utc": "2026-09-16T18:56:23.809455+00:00",
+        "trigger_commit": "3ecfad858684402477c03a80bd82ddd59367426e",
+        "workflow_run_id": 35137008070,
+        "workflow_job_id": 104931780141,
+        "final_x": 704812777,
+        "checkpoint_count": 60,
+        "checkpoint_sha256": "e3087aa6a3504fdacc57842df99f811d3c39a10b8d0bcb6ab91cb7c4e2b62369",
+        "verification": "PASS"
+      },
+      "boundary": "Confirmed for Scheduled condition-watch polling, not true webhook-triggered ordinary ChatGPT. ECS-006A also showed that scheduled connector mutations can be blocked by platform safety approval even when the connected app is configured for full access."
     },
     {
       "id": "ECS-008",
@@ -71,11 +89,10 @@
   ],
   "candidates": [
     {"id": "ECS-002", "name": "Repository as transactional working memory", "status": "PARTIALLY-SUBSUMED-BY-ECS-003"},
-    {"id": "ECS-006", "name": "Event-driven ChatGPT runtime", "status": "HYPOTHESIS"},
     {"id": "ECS-007", "name": "Human-interruptible execution", "status": "HYPOTHESIS"},
     {"id": "ECS-010", "name": "Self-verifying production loops", "status": "PARTIALLY-DEMONSTRATED-BY-ECS-009-013-014"},
     {"id": "ECS-011", "name": "Capability acquisition during a task", "status": "MECHANISM-OBSERVED"},
-    {"id": "ECS-012", "name": "Applicationless application", "status": "STRONGLY-SUGGESTED-BY-ECS-008-014"}
+    {"id": "ECS-012", "name": "Applicationless application", "status": "STRONGLY-SUGGESTED-BY-ECS-006-008-014"}
   ],
-  "emerging_pattern": "Confirmed behavior now spans cold-context state restoration, selective context virtualization, substrate-independent persistent protocols, self-authored remote execution, closed-loop transduction across unrelated systems, and coherent multi-epoch state progression across separate cold conversations. The strongest remaining architectural question is whether the same pattern can become event-driven or condition-driven without a user manually initiating each epoch."
+  "emerging_pattern": "Confirmed behavior now spans cold-context state restoration, selective context virtualization, persistent protocols across multiple substrates, self-authored remote execution, cross-tool transduction, coherent multi-epoch state progression across separate cold conversations, and autonomous condition-watch wake/verification without a user starting the observer turn. The strongest remaining architectural question is whether these primitives can be combined into one useful application-like system with interruption, recovery, policy boundaries, and closed-loop verification rather than isolated capability proofs."
 }
