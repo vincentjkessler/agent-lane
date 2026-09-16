@@ -1,6 +1,6 @@
 {
   "schema": "emergent-capability-surface/v1",
-  "updated_at": "2026-09-16T13:20:00-05:00",
+  "updated_at": "2026-09-16T13:25:00-05:00",
   "method": "Capabilities are promoted to CONFIRMED only after a reproducible controlled test with durable evidence. Documented primitives are distinguished from novel compositions.",
   "confirmed": [
     {
@@ -29,14 +29,22 @@
       "name": "Protocol over arbitrary persistent storage",
       "status": "CONFIRMED",
       "summary": "A native Google Doc served as the sole authoritative protocol/state substrate for a cold ChatGPT continuation, including deterministic selection, exact dispatch, and an appended execution receipt, without GitHub or prior task-conversation state.",
-      "evidence": "https://docs.google.com/document/d/1erSRh-_RBlRWweCVmmstIb4IYVAbgjs4ik_mo4exabs",
+      "evidence": "https://docs.google.com/document/d/1erSRh-_RBlRWweCVmmstIb4IYVAbgjs4ik_mo4exabs"
+    },
+    {
+      "id": "ECS-008",
+      "name": "Cross-tool transduction",
+      "status": "CONFIRMED",
+      "summary": "A cold ChatGPT conversation began from authoritative Google Doc state, translated it into newly authored GitHub executable artifacts, caused GitHub Actions to compute and independently verify a result, retrieved that external result, and wrote the receipt back to the original Google Doc.",
+      "evidence": "bci/runs/ecs-008-20260916-XT1/receipts/final.json",
       "verified_result": {
-        "selected_id": "B3",
-        "priority": 70,
-        "dispatch": "ROUTE B3|P70|DRIVE-5R8N-Q21",
-        "github_used": false,
-        "prior_conversation_context_used": false,
-        "receipt_appended_after_end_of_state": true
+        "workflow_commit": "8833e462b9b553cfa0ca57ec94df21e425c861a6",
+        "workflow_run_id": 35134127866,
+        "workflow_job_id": 104922106736,
+        "final_x": 853980994,
+        "checkpoint_count": 50,
+        "checkpoints_sha256": "9a77b201067ff6b50c281d41dcbc6c58bd3c8ac60322fc92da6a269c2b1bd4b7",
+        "verification": "PASS"
       }
     },
     {
@@ -58,10 +66,10 @@
     {"id": "ECS-002", "name": "Repository as transactional working memory", "status": "PARTIALLY-SUBSUMED-BY-ECS-003"},
     {"id": "ECS-006", "name": "Event-driven ChatGPT runtime", "status": "HYPOTHESIS"},
     {"id": "ECS-007", "name": "Human-interruptible execution", "status": "HYPOTHESIS"},
-    {"id": "ECS-008", "name": "Cross-tool transduction", "status": "NEXT-CANDIDATE"},
     {"id": "ECS-010", "name": "Self-verifying production loops", "status": "PARTIALLY-DEMONSTRATED-BY-ECS-009-013"},
     {"id": "ECS-011", "name": "Capability acquisition during a task", "status": "MECHANISM-OBSERVED"},
-    {"id": "ECS-012", "name": "Applicationless application", "status": "HYPOTHESIS"}
+    {"id": "ECS-012", "name": "Applicationless application", "status": "STRONGLY-SUGGESTED-BY-ECS-008"},
+    {"id": "ECS-014", "name": "Persistent multi-epoch runtime", "status": "NEXT-CANDIDATE"}
   ],
-  "emerging_pattern": "Confirmed behavior now spans two unrelated persistent-state substrates (GitHub and Google Docs) plus remote executable compute (GitHub Actions), supporting a substrate-independent composition hypothesis rather than a repository-specific trick."
+  "emerging_pattern": "Confirmed behavior now spans cold-context state restoration, selective context virtualization, substrate-independent persistent protocols, self-authored remote execution, and closed-loop state transduction across unrelated systems. The next unresolved question is whether these capabilities remain coherent across multiple sequential cold executions against one evolving state machine rather than a single-shot run."
 }
