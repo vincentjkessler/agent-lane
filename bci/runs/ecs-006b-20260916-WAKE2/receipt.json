@@ -1,16 +1,20 @@
 {
   "experiment_id": "ECS-006B-20260916-WAKE2",
   "manual_chat_after_arm": false,
-  "monitor_armed": true,
+  "monitor_mode": "condition_watch",
+  "mutation_actor": "GitHub Actions",
+  "prior_conversation_context_used": false,
   "result": {
     "checkpoint_count": 60,
     "checkpoint_sha256": "e3087aa6a3504fdacc57842df99f811d3c39a10b8d0bcb6ab91cb7c4e2b62369",
     "final_x": 704812777,
     "schema": "ecs-006b-result/v1"
   },
-  "schema": "ecs-006b-state/v1",
-  "status": "COMPLETE",
+  "schema": "ecs-006b-receipt/v1",
   "trigger_commit": "3ecfad858684402477c03a80bd82ddd59367426e",
+  "verdict": "PASS_PENDING_SCHEDULED_OBSERVER",
   "verification": "PASS",
+  "work_used": false,
+  "workflow_conclusion_expected": "success",
   "workflow_run_id": 35137008070
 }
