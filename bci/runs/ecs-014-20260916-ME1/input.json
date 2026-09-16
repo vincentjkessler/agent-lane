@@ -1,1 +1,1 @@
-{"schema":"ecs-014-input/v1","epoch":1,"seed":731927,"modulus":2147483647,"multiplier":48271,"iterations":43000,"checkpoint_interval":991}
+{"schema":"ecs-014-input/v1","epoch":2,"seed":1162703555,"modulus":2147483647,"multiplier":48271,"iterations":46000,"checkpoint_interval":991}
