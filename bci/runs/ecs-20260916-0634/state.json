@@ -1,0 +1,35 @@
+{
+  "experiment_id": "ECS-003-004-20260916-0634",
+  "title": "Externally Checkpointed Cognition / Context-Window Virtualization",
+  "status": "phase-1-initialized",
+  "authoritative_state": true,
+  "objective": "Determine whether an ordinary ChatGPT conversation can externalize enough structured task state to resume a nontrivial workflow from a compact external pointer rather than relying on the full conversational transcript.",
+  "hypotheses": [
+    "ECS-003: execution state can be checkpointed externally and used to resume deterministically after interruption.",
+    "ECS-004: only active working state must remain in model context while larger task state can live externally and be retrieved selectively."
+  ],
+  "protocol": {
+    "state_store": "GitHub repository vincentjkessler/agent-lane",
+    "branch": "bci-wire",
+    "root": "bci/runs/ecs-20260916-0634/",
+    "resume_pointer": "vincentjkessler/agent-lane@bci-wire:bci/runs/ecs-20260916-0634/state.json",
+    "rule": "On resumption, treat this file and referenced artifacts as authoritative. Do not reconstruct operational state from chat memory except to locate this pointer.",
+    "advance_rule": "A phase advances only after a written receipt records inputs, operation, expected result, observed result, and verdict."
+  },
+  "current_phase": 1,
+  "completed": [
+    "Selected ECS-003 and ECS-004 as first controlled capability tests.",
+    "Confirmed repository access and existing bci-wire branch.",
+    "Created authoritative external state ledger."
+  ],
+  "next_action": "Create a payload containing a synthetic multi-step task whose exact continuation is encoded externally, then produce a checkpoint receipt and verify that the external files alone specify the next operation.",
+  "acceptance": {
+    "phase_1": "External ledger exists and can be fetched independently.",
+    "phase_2": "A synthetic task can be resumed correctly using only the external task package plus a compact pointer.",
+    "phase_3": "A genuinely cold context (new chat or isolated execution context) resumes correctly from the pointer without hidden transcript dependence.",
+    "ecs_003_pass": "Phase 3 succeeds with exact state reconstruction and no material contradiction.",
+    "ecs_004_pass": "The cold context retrieves only the task state needed for the current operation while larger state remains external, and still completes correctly."
+  },
+  "evidence_policy": "Do not call ECS-003 or ECS-004 confirmed before the cold-context phase. Same-chat replay is provisional because the model still has access to prior conversational context.",
+  "created_at": "2026-09-16T06:34:00-05:00"
+}
