@@ -1,0 +1,15 @@
+{
+  "schema": "ecs-006a-state/v1",
+  "experiment_id": "ECS-006A-20260916-WAKE1",
+  "status": "WAITING_FOR_TRIGGER",
+  "monitor_armed": false,
+  "manual_chat_after_arm": null,
+  "trigger_path": "bci/runs/ecs-006a-20260916-WAKE1/trigger.json",
+  "workflow_path": ".github/workflows/ecs-006a-wake.yml",
+  "receipt_path": "bci/runs/ecs-006a-20260916-WAKE1/receipt.json",
+  "trigger_commit": null,
+  "workflow_run_id": null,
+  "workflow_job_id": null,
+  "verification": null,
+  "result": null
+}
