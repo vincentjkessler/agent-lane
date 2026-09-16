@@ -1,0 +1,58 @@
+{
+  "schema": "ecs-capability-receipt/v1",
+  "experiment_id": "ECS-012-20260916-APP1",
+  "specimen": "ECL Release Steward",
+  "useful_job": "Produce a verified release/status package for the live Emergent Capability Laboratory registry.",
+  "constraints": {
+    "conventional_coordinating_application_used": false,
+    "codex_used": false,
+    "chatgpt_work_used": false,
+    "local_terminal_used": false,
+    "user_download_upload_loop_used": false,
+    "user_supplied_api_key_used": false
+  },
+  "stage1": {
+    "workflow_run_id": 35138405247,
+    "status": "PASS",
+    "durable_transition": "AWAITING_HUMAN_STEER",
+    "analysis_sha256": "c43199b907d66fdd56c122a27ca7fb675e77ecae975cffa79c457e9cafb01400",
+    "confirmed_count": 9,
+    "candidate_count": 5,
+    "premature_stage2_artifacts": false
+  },
+  "human_interrupt": {
+    "choice": "FRONTIER",
+    "supplied_after_pause": true,
+    "material_effect": "Included candidate frontier and statuses in release.json and ECL_STATUS.md"
+  },
+  "stage2_attempts": [
+    {
+      "workflow_run_id": 35138607616,
+      "status": "FAIL",
+      "reason": "Human steer adapter used field steer while runtime contract required choice; verifier/runtime rejected invalid steer."
+    },
+    {
+      "workflow_run_id": 35138660013,
+      "workflow_job_id": 104937333903,
+      "status": "PASS",
+      "verification": "ECS012_VERIFY_STAGE2=PASS",
+      "durable_transition": "COMPLETE",
+      "selected_policy": "FRONTIER",
+      "release_sha256": "3b552c88e0352f2bc8dc6fd2723267a9847bac65ee2ffbcb07fa7aa6a5bee459",
+      "runtime_commit": "479c5eb"
+    }
+  ],
+  "final_state": {
+    "status": "COMPLETE",
+    "stage": 2,
+    "human_interrupt_applied": true,
+    "selected_steer": "FRONTIER",
+    "release_sha256": "3b552c88e0352f2bc8dc6fd2723267a9847bac65ee2ffbcb07fa7aa6a5bee459"
+  },
+  "verdict": {
+    "ecs_007": "CONFIRMED",
+    "ecs_012": "CONFIRMED",
+    "ecs_010": "NOT_CONFIRMED_AUTONOMOUS_REPAIR",
+    "basis": "The application-like specimen performed a useful release-readiness job through durable external state, generated executable instruments, hosted execution, independent verification, a real human pause/steer that materially changed output, resumable execution, and final durable artifacts without a conventional coordinating application."
+  }
+}
