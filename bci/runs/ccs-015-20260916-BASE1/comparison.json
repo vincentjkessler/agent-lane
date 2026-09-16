@@ -1,0 +1,40 @@
+{
+  "baseline_release_sha256": "3b552c88e0352f2bc8dc6fd2723267a9847bac65ee2ffbcb07fa7aa6a5bee459",
+  "compositional": {
+    "explicit_durable_human_interrupt": true,
+    "files": [
+      "bci/runs/ecs-012-20260916-APP1/collect.py",
+      "bci/runs/ecs-012-20260916-APP1/render.py",
+      "bci/runs/ecs-012-20260916-APP1/verify.py",
+      ".github/workflows/ecs-012-applicationless.yml"
+    ],
+    "implementation_files": 4,
+    "implementation_loc": 317,
+    "independent_runtime_verifier": true,
+    "observed_adapter_fault_rejected": true,
+    "observed_workflow_attempts": 3,
+    "policy_decision_events_required": 1,
+    "required_successful_workflow_stages": 2
+  },
+  "conventional_baseline": {
+    "explicit_durable_human_interrupt": false,
+    "files": [
+      "bci/runs/ccs-015-20260916-BASE1/baseline.py",
+      ".github/workflows/ccs-015-conventional-baseline.yml"
+    ],
+    "implementation_files": 2,
+    "implementation_loc": 81,
+    "independent_runtime_verifier": false,
+    "lab_comparator_verifies_final_output": true,
+    "observed_workflow_attempts": 1,
+    "policy_decision_events_required": 1,
+    "required_successful_workflow_stages": 1,
+    "workflow_run_id": "35139942275"
+  },
+  "experiment_id": "CCS-015-20260916-BASE1",
+  "output_exact_semantic_match": true,
+  "reference_release_sha256": "3b552c88e0352f2bc8dc6fd2723267a9847bac65ee2ffbcb07fa7aa6a5bee459",
+  "schema": "ccs-015-comparison/v1",
+  "task": "Reproduce the CCS-012 FRONTIER release from the same historical source map",
+  "verdict": "CONVENTIONAL_AUTOMATION_SIMPLER_FOR_THIS_DETERMINISTIC_TASK"
+}
