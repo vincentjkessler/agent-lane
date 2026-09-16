@@ -1,0 +1,28 @@
+name: ECS-008 Cross-Tool Transduction
+
+on:
+  push:
+    branches:
+      - bci-wire
+    paths:
+      - .github/workflows/ecs-008-cross-tool.yml
+      - bci/runs/ecs-008-20260916-XT1/**
+
+jobs:
+  cross-tool:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Execute compute.py
+        run: python3 bci/runs/ecs-008-20260916-XT1/compute.py
+
+      - name: Execute verify.py
+        run: python3 bci/runs/ecs-008-20260916-XT1/verify.py
+
+      - name: Print ECS008_RESULT
+        run: echo "ECS008_RESULT=$(cat bci/runs/ecs-008-20260916-XT1/result.json)"
+
+      - name: Print ECS008_VERIFY
+        run: echo "ECS008_VERIFY=PASS"
