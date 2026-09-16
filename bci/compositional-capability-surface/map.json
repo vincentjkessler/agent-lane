@@ -1,6 +1,6 @@
 {
   "schema": "compositional-capability-surface/v1",
-  "updated_at": "2026-09-16T14:18:00-05:00",
+  "updated_at": "2026-09-16T14:21:00-05:00",
   "lab": "Capability Composition Laboratory",
   "surface": "Compositional Capability Surface",
   "legacy_surface": "Emergent Capability Surface",
@@ -24,9 +24,31 @@
     {"id":"CCS-010","legacy_id":"ECS-010","name":"Self-verifying production loops","status":"PARTIALLY-DEMONSTRATED"},
     {"id":"CCS-011","legacy_id":"ECS-011","name":"Capability acquisition during a task","status":"MECHANISM-OBSERVED"}
   ],
+  "comparative_results": [
+    {
+      "id": "CCS-015",
+      "name": "Composition versus conventional automation on deterministic Release Steward",
+      "status": "COMPLETE-CALIBRATION",
+      "evidence": "bci/runs/ccs-015-20260916-BASE1/comparison.json",
+      "result": "CONVENTIONAL_AUTOMATION_SIMPLER_FOR_THIS_DETERMINISTIC_TASK",
+      "measurements": {
+        "exact_semantic_output_match": true,
+        "compositional_implementation_files": 4,
+        "compositional_implementation_loc": 317,
+        "compositional_required_successful_workflow_stages": 2,
+        "compositional_observed_workflow_attempts": 3,
+        "conventional_implementation_files": 2,
+        "conventional_implementation_loc": 81,
+        "conventional_required_successful_workflow_stages": 1,
+        "conventional_observed_workflow_attempts": 1,
+        "policy_decision_events_required_each": 1
+      },
+      "interpretation": "For a deterministic structured transformation, the extra durable state, interrupt/resume machinery, and runtime verifier did not establish net practical value over a conventional one-shot Python/GitHub Actions workflow. Future value tests should target adaptation, cold continuation, evolving requirements, or recovery where those properties are actually needed."
+    }
+  ],
   "next_experiment": {
-    "id": "CCS-015",
-    "name": "Comparative baseline: composition versus conventional automation",
-    "question": "For the same useful deterministic release-steward task, what does the compositional approach measurably buy or cost versus a conventional Python/GitHub Actions implementation?"
+    "id": "CCS-016",
+    "name": "Adaptive comparative baseline",
+    "question": "When a useful task receives an unanticipated natural-language policy change after work has begun, can composition absorb the change with less code modification or manual context transfer than conventional automation while preserving verification?"
   }
 }
