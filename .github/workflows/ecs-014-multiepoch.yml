@@ -1,0 +1,23 @@
+name: ECS-014 Persistent Multi-Epoch
+
+on:
+  push:
+    branches:
+      - bci-wire
+    paths:
+      - '.github/workflows/ecs-014-multiepoch.yml'
+      - 'bci/runs/ecs-014-20260916-ME1/**'
+
+permissions:
+  contents: read
+
+jobs:
+  compute-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Compute epoch
+        run: python3 bci/runs/ecs-014-20260916-ME1/compute.py
+      - name: Independently verify epoch
+        run: python3 bci/runs/ecs-014-20260916-ME1/verify.py
