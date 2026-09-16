@@ -1,0 +1,25 @@
+name: ECS 006A condition-triggered wake
+
+on:
+  push:
+    branches: [bci-wire]
+    paths:
+      - 'bci/runs/ecs-006a-20260916-WAKE1/trigger.json'
+
+permissions:
+  contents: read
+
+jobs:
+  compute-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Compute
+        run: python3 bci/runs/ecs-006a-20260916-WAKE1/compute.py
+      - name: Verify
+        run: python3 bci/runs/ecs-006a-20260916-WAKE1/verify.py
+      - name: Emit result
+        run: echo "ECS006A_RESULT=$(cat bci/runs/ecs-006a-20260916-WAKE1/result.json)"
+      - name: Emit verification
+        run: echo "ECS006A_VERIFY=PASS"
