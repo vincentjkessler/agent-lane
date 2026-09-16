@@ -1,0 +1,43 @@
+{
+  "counts": {
+    "APPROVE": 4,
+    "HOLD": 4
+  },
+  "digest": "e33df0bc0828ed592fbe1c2b048987c922c0b52e46dbe13e417d25c34b827072",
+  "items": [
+    {
+      "decision": "APPROVE",
+      "id": "R-101"
+    },
+    {
+      "decision": "APPROVE",
+      "id": "R-105"
+    },
+    {
+      "decision": "APPROVE",
+      "id": "R-106"
+    },
+    {
+      "decision": "APPROVE",
+      "id": "R-108"
+    },
+    {
+      "decision": "HOLD",
+      "id": "R-102"
+    },
+    {
+      "decision": "HOLD",
+      "id": "R-103"
+    },
+    {
+      "decision": "HOLD",
+      "id": "R-104"
+    },
+    {
+      "decision": "HOLD",
+      "id": "R-107"
+    }
+  ],
+  "policy": "initial-v1",
+  "schema": "ccs-016-report/v1"
+}

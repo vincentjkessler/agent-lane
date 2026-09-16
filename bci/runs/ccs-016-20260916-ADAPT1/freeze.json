@@ -1,0 +1,33 @@
+{
+  "disruption_present_at_freeze": false,
+  "experiment_id": "CCS-016-20260916-ADAPT1",
+  "freeze_source_commit": "593face0b0a4081935285b5a4a46a4c68cf05d65",
+  "initial_outputs_semantically_identical": true,
+  "initial_report_digest": "e33df0bc0828ed592fbe1c2b048987c922c0b52e46dbe13e417d25c34b827072",
+  "lanes": {
+    "compositional": {
+      "file_sha256": {
+        "compositional/engine.py": "03fe448a574eed0b74a9a277dd8c23c314764898ab1b5a0610b942c6b1866c6f",
+        "compositional/policy.json": "cd0b250422d386d1604b8e2fe65fbdc7d70adef483976921f2b4d1117e2d2c76"
+      },
+      "files": [
+        "compositional/engine.py",
+        "compositional/policy.json"
+      ],
+      "implementation_files": 2,
+      "implementation_loc": 59
+    },
+    "conventional": {
+      "file_sha256": {
+        "conventional/baseline.py": "84c94513c26732b22cb37b08bc1eb990fb225f5dd4bcc232254093cd5c1bccd0"
+      },
+      "files": [
+        "conventional/baseline.py"
+      ],
+      "implementation_files": 1,
+      "implementation_loc": 18
+    }
+  },
+  "schema": "ccs-016-freeze/v1",
+  "status": "FROZEN_AWAITING_HUMAN_DISRUPTION"
+}
