@@ -1,0 +1,40 @@
+name: CCS-015 Conventional Baseline
+
+on:
+  push:
+    branches: [bci-wire]
+    paths:
+      - 'bci/runs/ccs-015-20260916-BASE1/trigger.json'
+
+permissions:
+  contents: write
+
+jobs:
+  baseline:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reconstruct exact historical input
+        run: |
+          git show 72c9af58af075baa9e73311b208d7263a8890255:bci/emergent-capability-surface/map.json > bci/runs/ccs-015-20260916-BASE1/source-map.json
+
+      - name: Run conventional Python baseline
+        run: python3 bci/runs/ccs-015-20260916-BASE1/baseline.py
+
+      - name: Independently measure against compositional specimen
+        run: python3 bci/runs/ccs-015-20260916-BASE1/measure.py
+
+      - name: Commit benchmark evidence
+        run: |
+          git config user.name 'ccs-benchmark'
+          git config user.email 'ccs-benchmark@users.noreply.github.com'
+          git add bci/runs/ccs-015-20260916-BASE1/source-map.json \
+                  bci/runs/ccs-015-20260916-BASE1/baseline_release.json \
+                  bci/runs/ccs-015-20260916-BASE1/comparison.json \
+                  bci/runs/ccs-015-20260916-BASE1/CONCLUSION.md
+          git commit -m 'CCS-015 comparative baseline result'
+          git push origin HEAD:bci-wire
