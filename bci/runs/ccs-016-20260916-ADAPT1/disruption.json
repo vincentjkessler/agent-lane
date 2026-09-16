@@ -1,0 +1,31 @@
+{
+  "schema": "ccs-016-disruption/v1",
+  "experiment_id": "CCS-016-20260916-ADAPT1",
+  "provenance": {
+    "supplied_by": "human principal investigator",
+    "human_reports_ai_assistance": "Codex",
+    "timing": "supplied after frozen baseline",
+    "classification": "AI-assisted human challenge"
+  },
+  "exact_policy_text": "Keep all existing requirements concerning tests, security review, and rollback readiness. In addition, documentation must be ready for every release. Owner acknowledgement is also required, except when customer impact is explicitly low. Missing or unrecognized customer-impact values mean HOLD. Missing, negative, or unclear documentation readiness—or owner acknowledgement where required—also means HOLD. Low customer impact does not waive any other requirement.",
+  "schema_mapping": {
+    "tests requirement": "tests_passed must be boolean true",
+    "security requirement": "security_review must equal the recognized value 'pass'",
+    "rollback requirement": "rollback_ready must be boolean true",
+    "documentation ready": "docs_ready must be boolean true; false, missing, or any non-true value means HOLD",
+    "recognized customer impact values": ["none", "minor", "major"],
+    "explicitly low customer impact": "customer_impact == 'none' (the existing schema's lowest explicit impact encoding)",
+    "owner acknowledgement": "owner_ack must be boolean true when customer_impact is 'minor' or 'major'; it is waived only when customer_impact is 'none'",
+    "missing or unrecognized customer impact": "HOLD"
+  },
+  "comparison_constraints": [
+    "same original input records",
+    "same exact disruption semantics",
+    "same fixed expected outcomes",
+    "same model implementation assistance: GPT-5.6 Sol in the same assistant turn",
+    "correctness reported before efficiency",
+    "execution time kept separate from adaptation time",
+    "shared evaluation work separated from lane-specific work",
+    "no claim that same-model checking is independent"
+  ]
+}
