@@ -1,0 +1,41 @@
+{
+  "schema": "ecs-compute-challenge/v1",
+  "nodes": {
+    "amber": 7,
+    "birch": 11,
+    "cobalt": 5,
+    "delta": 13,
+    "ember": 3,
+    "frost": 17,
+    "glyph": 2,
+    "harbor": 19,
+    "iris": 23,
+    "juniper": 29,
+    "kestrel": 31,
+    "lumen": 37
+  },
+  "edges": [
+    ["amber", "delta"],
+    ["amber", "ember"],
+    ["birch", "ember"],
+    ["birch", "frost"],
+    ["cobalt", "frost"],
+    ["delta", "glyph"],
+    ["ember", "glyph"],
+    ["ember", "harbor"],
+    ["frost", "harbor"],
+    ["glyph", "iris"],
+    ["harbor", "iris"],
+    ["harbor", "juniper"],
+    ["iris", "kestrel"],
+    ["juniper", "kestrel"],
+    ["kestrel", "lumen"]
+  ],
+  "salt": "ECS-BOOTSTRAP-9Q7M-20260916",
+  "required_outputs": [
+    "lexicographically_smallest_topological_order",
+    "maximum_weighted_path_sum",
+    "fingerprint_sha256"
+  ],
+  "fingerprint_rule": "sha256('|'.join(order) + ':' + str(max_path_sum) + ':' + salt)"
+}
