@@ -1,0 +1,9 @@
+{
+  "archive": true,
+  "range": "historical-units-WB01-WB40",
+  "note": "Second deliberately irrelevant shard. Retrieval during the next-operation test counts against selective-context success unless active state explicitly references it.",
+  "records": [
+    {"id":"WB01","result":"complete"}, {"id":"WB02","result":"complete"}, {"id":"WB03","result":"complete"}, {"id":"WB04","result":"complete"},
+    {"id":"WB05","result":"complete"}, {"id":"WB06","result":"complete"}, {"id":"WB07","result":"complete"}, {"id":"WB08","result":"complete"}
+  ]
+}
