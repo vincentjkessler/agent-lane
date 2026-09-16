@@ -1,7 +1,7 @@
 {
   "experiment_id": "ECS-009-013-20260916-1311",
   "title": "Ephemeral Instrument Factory / CI Compute Transduction",
-  "status": "initialized",
+  "status": "complete-confirmed",
   "objective": "Test whether ordinary ChatGPT can author a purpose-built executable instrument, cause GitHub Actions to execute it, observe externally computed output, and rely on a machine-verifier receipt without Codex, Work, local terminal access, or ZIP handoff.",
   "hypotheses": {
     "ECS-009": "ChatGPT can manufacture a temporary specialized instrument during reasoning and use its output as a new task primitive.",
@@ -13,14 +13,43 @@
     "No local-machine terminal",
     "No user download/upload loop",
     "No external API key supplied by the user",
-    "Do not compute the challenge answer locally before the external run"
+    "Challenge answer was not computed locally before the external run"
   ],
-  "acceptance": {
-    "phase_1": "Purpose-built source instrument, challenge, verifier, and CI harness exist on bci-wire.",
-    "phase_2": "A GitHub Actions runner executes the newly authored instrument and verifier and exposes a machine-readable PASS result.",
-    "phase_3": "ChatGPT retrieves the external run result and correctly uses the externally computed value in the experiment receipt.",
-    "ecs_009_pass": "The generated instrument executes successfully and its externally produced output is consumed by ChatGPT.",
-    "ecs_013_pass": "The ordinary ChatGPT conversation successfully causes and observes remote computation through GitHub CI without another coding/runtime product."
+  "completed": [
+    "Authored challenge.json.",
+    "Authored purpose-built solve.py instrument.",
+    "Authored separately implemented verify.py verifier.",
+    "Authored .github/workflows/ecs-009-013.yml on bci-wire.",
+    "Connector-authored workflow commit ffc76c1c378bd5235011293b76b531c2b74bf232 triggered GitHub Actions run 35133069018.",
+    "Hosted runner executed solve.py and verify.py successfully.",
+    "Verifier emitted ECS_VERDICT=PASS.",
+    "Workflow emitted ECS_REMOTE_COMPUTE=PASS.",
+    "ChatGPT retrieved job logs and consumed the externally computed result.",
+    "Recorded receipts/final.json."
+  ],
+  "external_result": {
+    "workflow_run_id": 35133069018,
+    "job_id": 104918561357,
+    "order": ["amber", "birch", "cobalt", "delta", "ember", "frost", "glyph", "harbor", "iris", "juniper", "kestrel", "lumen"],
+    "maximum_weighted_path_sum": 144,
+    "fingerprint_sha256": "a7fedba01d70ed9fe2d244cb5a1852c0e18a585e3d7491303a22e7d37f9aa939",
+    "verifier": "PASS",
+    "remote_compute_marker": "PASS"
   },
-  "next_action": "Create challenge.json, solve.py, verify.py, and a push-triggered GitHub Actions workflow, then inspect the resulting workflow run rather than solving the challenge inside ChatGPT."
+  "verdict": {
+    "phase_1": "PASS",
+    "phase_2": "PASS",
+    "phase_3": "PASS",
+    "ecs_009": "CONFIRMED",
+    "ecs_013": "CONFIRMED",
+    "basis": "Ordinary ChatGPT created a new software instrument and verifier, caused a hosted CI runtime to execute them, retrieved the externally produced result, and used it without Codex, Work, local terminal access, a user-mediated ZIP loop, or a user-supplied API key."
+  },
+  "artifacts": {
+    "challenge": "challenge.json",
+    "instrument": "solve.py",
+    "verifier": "verify.py",
+    "workflow": ".github/workflows/ecs-009-013.yml",
+    "receipt": "receipts/final.json"
+  },
+  "next_action": "Closed. Register ECS-009 and ECS-013 as confirmed specimens and proceed to another capability class."
 }
