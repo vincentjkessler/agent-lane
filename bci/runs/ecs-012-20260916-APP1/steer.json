@@ -1,0 +1,7 @@
+{
+  "schema": "ecs-012-steer/v1",
+  "experiment_id": "ECS-012-20260916-APP1",
+  "steer": "FRONTIER",
+  "source": "human",
+  "prior_state": "AWAITING_HUMAN_STEER"
+}
