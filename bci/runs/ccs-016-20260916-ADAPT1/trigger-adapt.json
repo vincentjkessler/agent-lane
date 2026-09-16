@@ -1,0 +1,5 @@
+{
+  "schema": "ccs-016-trigger/v1",
+  "experiment_id": "CCS-016-20260916-ADAPT1",
+  "action": "RUN_POST_DISRUPTION_COMPARISON"
+}
