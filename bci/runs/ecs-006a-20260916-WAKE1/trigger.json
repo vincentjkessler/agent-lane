@@ -1,0 +1,11 @@
+{
+  "schema": "ecs-006a-trigger/v1",
+  "experiment_id": "ECS-006A-20260916-WAKE1",
+  "status": "READY",
+  "armed_state_commit": "621686b16003bbd799e3ea888663651a839c44d4",
+  "seed": 24681357,
+  "modulus": 2147483647,
+  "multiplier": 48271,
+  "iterations": 60000,
+  "checkpoint_interval": 1009
+}
