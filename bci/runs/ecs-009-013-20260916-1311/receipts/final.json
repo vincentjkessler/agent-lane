@@ -1,0 +1,45 @@
+{
+  "schema": "ecs-capability-receipt/v1",
+  "experiment_id": "ECS-009-013-20260916-1311",
+  "observed_at": "2026-09-16T13:14:00-05:00",
+  "inputs": {
+    "workflow_commit": "ffc76c1c378bd5235011293b76b531c2b74bf232",
+    "workflow_run_id": 35133069018,
+    "job_id": 104918561357,
+    "challenge": "challenge.json",
+    "instrument": "solve.py",
+    "verifier": "verify.py",
+    "local_answer_computed_before_run": false
+  },
+  "external_execution": {
+    "provider": "GitHub Actions hosted runner",
+    "event": "push",
+    "head_branch": "bci-wire",
+    "conclusion": "success",
+    "runner_os": "Ubuntu 24.04.5 LTS",
+    "solver_step": "success",
+    "verifier_step": "success"
+  },
+  "externally_computed_result": {
+    "order": ["amber", "birch", "cobalt", "delta", "ember", "frost", "glyph", "harbor", "iris", "juniper", "kestrel", "lumen"],
+    "maximum_weighted_path_sum": 144,
+    "fingerprint_sha256": "a7fedba01d70ed9fe2d244cb5a1852c0e18a585e3d7491303a22e7d37f9aa939",
+    "verifier": "PASS",
+    "remote_compute_marker": "PASS"
+  },
+  "constraints_observed": {
+    "codex_used": false,
+    "chatgpt_work_used": false,
+    "local_terminal_used": false,
+    "user_download_upload_loop_used": false,
+    "user_supplied_api_key_used": false
+  },
+  "verdict": {
+    "phase_1": "PASS",
+    "phase_2": "PASS",
+    "phase_3": "PASS",
+    "ecs_009": "CONFIRMED",
+    "ecs_013": "CONFIRMED",
+    "basis": "Ordinary ChatGPT authored a purpose-built solver, independent verifier, and CI harness; the connector-authored push caused a hosted GitHub runner to execute them; ChatGPT retrieved the logs and consumed values first produced by the remote run."
+  }
+}
