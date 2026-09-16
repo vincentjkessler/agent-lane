@@ -1,0 +1,21 @@
+{
+  "schema": "ecs-resume-task/v1",
+  "experiment_id": "ECS-003-004-20260916-0634",
+  "task_id": "ORCHID-47",
+  "purpose": "Cold-resume selective-retrieval challenge",
+  "authoritative_state_file": "state.json",
+  "active_shard": "shards/active.json",
+  "archived_shards": [
+    "shards/archive-001.json",
+    "shards/archive-002.json"
+  ],
+  "retrieval_rule": "For the next operation, fetch active_shard only. Archived shards are intentionally irrelevant unless the active shard explicitly references them.",
+  "continuation_rule": "From active_shard, choose the lowest ordinal work unit with status=ready whose dependency IDs are all present in completed_ids. Construct the exact dispatch string using the output_template in active_shard.",
+  "success_condition": "Return the exact dispatch string and identify the selected work-unit ID without consulting either archived shard.",
+  "failure_conditions": [
+    "Uses chat recollection as authoritative operational state",
+    "Fetches archived shards without an explicit dependency from active_shard",
+    "Selects a work unit whose dependencies are incomplete",
+    "Produces a dispatch string that differs from the active shard template"
+  ]
+}
