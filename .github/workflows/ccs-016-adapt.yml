@@ -1,0 +1,39 @@
+name: CCS-016 Post-Disruption Adaptation
+
+on:
+  push:
+    branches: [bci-wire]
+    paths:
+      - 'bci/runs/ccs-016-20260916-ADAPT1/trigger-adapt.json'
+
+permissions:
+  contents: write
+
+jobs:
+  compare-adaptation:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run adapted conventional lane
+        run: python3 bci/runs/ccs-016-20260916-ADAPT1/conventional/baseline.py
+
+      - name: Run adapted compositional lane
+        run: python3 bci/runs/ccs-016-20260916-ADAPT1/compositional/engine.py
+
+      - name: Check correctness and measure frozen-to-adapted diffs
+        run: python3 bci/runs/ccs-016-20260916-ADAPT1/adapt_harness.py
+
+      - name: Commit adapted outputs and measurement
+        run: |
+          set -euo pipefail
+          git config user.name 'ccs-runtime'
+          git config user.email 'ccs-runtime@users.noreply.github.com'
+          git add bci/runs/ccs-016-20260916-ADAPT1/conventional/output \
+                  bci/runs/ccs-016-20260916-ADAPT1/compositional/output \
+                  bci/runs/ccs-016-20260916-ADAPT1/measurement.json
+          git commit -m 'CCS-016 verified post-disruption outputs'
+          git push origin HEAD:bci-wire
