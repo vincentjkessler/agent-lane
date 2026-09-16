@@ -1,0 +1,20 @@
+{
+  "schema": "ccs-016-expected/v1",
+  "experiment_id": "CCS-016-20260916-ADAPT1",
+  "locked_before_lane_edits": true,
+  "creator": "GPT-5.6 Sol, deriving the fixture from the human-supplied Codex-assisted challenge and the frozen input records",
+  "checker": "GPT-5.6 Sol plus deterministic comparison code to be executed against both lanes; this is same-model checking and is not described as independent verification",
+  "policy_mapping_reference": "disruption.json",
+  "expected_order": ["R-105", "R-108", "R-101", "R-102", "R-103", "R-104", "R-106", "R-107"],
+  "expected": [
+    {"id":"R-105","decision":"APPROVE","reason":"original requirements pass; docs_ready=true; customer_impact=none qualifies for low-impact owner_ack exception"},
+    {"id":"R-108","decision":"APPROVE","reason":"original requirements pass; docs_ready=true; customer_impact=none; owner_ack=true"},
+    {"id":"R-101","decision":"HOLD","reason":"docs_ready=false"},
+    {"id":"R-102","decision":"HOLD","reason":"rollback_ready=false"},
+    {"id":"R-103","decision":"HOLD","reason":"tests_passed=false; customer_impact=major would also require owner_ack=true"},
+    {"id":"R-104","decision":"HOLD","reason":"security_review is conditional, not pass"},
+    {"id":"R-106","decision":"HOLD","reason":"docs_ready=false"},
+    {"id":"R-107","decision":"HOLD","reason":"multiple original and new requirements fail"}
+  ],
+  "counts": {"APPROVE": 2, "HOLD": 6}
+}
