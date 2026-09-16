@@ -1,0 +1,14 @@
+{
+  "schema": "ccs-016-provenance-correction/v1",
+  "experiment_id": "CCS-016-20260916-ADAPT1",
+  "recorded_after_lane_adaptation_commits_began": true,
+  "reason": "Human principal investigator clarified model provenance after the initial disruption metadata had already been recorded.",
+  "corrected_provenance": {
+    "challenge_authoring_assistance": "Astra 6",
+    "challenge_supplier": "human principal investigator",
+    "planned_external_evaluator": "Opus 4.6",
+    "implementation_assistant_for_both_lanes": "GPT-5.6 Sol"
+  },
+  "scope": "Metadata/provenance correction only. Challenge wording, frozen inputs, expected outcomes, acceptance criteria, and lane implementations are unchanged by this correction.",
+  "audit_note": "Earlier disruption metadata incorrectly named Codex as challenge-authoring assistance. That earlier record is preserved; this file is authoritative for provenance. Opus 4.6 has not yet evaluated the result at the time of this correction."
+}
