@@ -2,7 +2,7 @@
   "experiment_id": "ECS-006B-20260916-WAKE2",
   "schema": "ecs-006b-state/v1",
   "status": "WAITING_FOR_TRIGGER",
-  "monitor_armed": false,
+  "monitor_armed": true,
   "manual_chat_after_arm": false,
   "trigger_commit": null,
   "workflow_run_id": null,
