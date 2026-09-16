@@ -1,0 +1,26 @@
+{
+  "experiment_id": "ECS-009-013-20260916-1311",
+  "title": "Ephemeral Instrument Factory / CI Compute Transduction",
+  "status": "initialized",
+  "objective": "Test whether ordinary ChatGPT can author a purpose-built executable instrument, cause GitHub Actions to execute it, observe externally computed output, and rely on a machine-verifier receipt without Codex, Work, local terminal access, or ZIP handoff.",
+  "hypotheses": {
+    "ECS-009": "ChatGPT can manufacture a temporary specialized instrument during reasoning and use its output as a new task primitive.",
+    "ECS-013": "A connected source-control/CI system can be repurposed as an on-demand remote execution substrate reachable from an ordinary ChatGPT conversation."
+  },
+  "constraints": [
+    "No Codex",
+    "No ChatGPT Work",
+    "No local-machine terminal",
+    "No user download/upload loop",
+    "No external API key supplied by the user",
+    "Do not compute the challenge answer locally before the external run"
+  ],
+  "acceptance": {
+    "phase_1": "Purpose-built source instrument, challenge, verifier, and CI harness exist on bci-wire.",
+    "phase_2": "A GitHub Actions runner executes the newly authored instrument and verifier and exposes a machine-readable PASS result.",
+    "phase_3": "ChatGPT retrieves the external run result and correctly uses the externally computed value in the experiment receipt.",
+    "ecs_009_pass": "The generated instrument executes successfully and its externally produced output is consumed by ChatGPT.",
+    "ecs_013_pass": "The ordinary ChatGPT conversation successfully causes and observes remote computation through GitHub CI without another coding/runtime product."
+  },
+  "next_action": "Create challenge.json, solve.py, verify.py, and a push-triggered GitHub Actions workflow, then inspect the resulting workflow run rather than solving the challenge inside ChatGPT."
+}
