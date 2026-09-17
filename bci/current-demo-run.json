@@ -1,0 +1,9 @@
+{
+  "schema": "bci.demo-pointer.v1",
+  "runId": "bci-20260917-112847-3d8d5264a0d1",
+  "repo": "vincentjkessler/agent-lane",
+  "candidateBranch": "bci-wire",
+  "feedbackBranch": "bci-feedback",
+  "contractPath": "bci/runs/bci-20260917-112847-3d8d5264a0d1/contract.md",
+  "createdAt": "2026-09-17T11:28:47.769Z"
+}
