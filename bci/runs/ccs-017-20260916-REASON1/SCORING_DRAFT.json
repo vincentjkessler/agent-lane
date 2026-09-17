@@ -1,0 +1,64 @@
+{
+  "schema": "ccs-017-scoring-draft/v1",
+  "experiment_id": "CCS-017-20260916-REASON1",
+  "status": "DRAFT_FOR_EXTERNAL_REVIEW_DO_NOT_EXECUTE",
+  "hidden_test_cases": 30,
+  "gold_balance": {
+    "APPROVE": 10,
+    "HOLD": 10,
+    "CLARIFY": 10
+  },
+  "objective_score": {
+    "total_points": 100,
+    "decision_correctness": {
+      "points": 60,
+      "method": "2 points per exact gold decision across 30 cases"
+    },
+    "evidence_identification": {
+      "points": 25,
+      "method": "25 multiplied by micro-averaged F1 over cited evidence IDs versus gold-required evidence IDs"
+    },
+    "reason_and_uncertainty": {
+      "points": 15,
+      "method": "15 multiplied by micro-averaged F1 over structured reason codes and CLARIFY clarification-needed categories"
+    }
+  },
+  "separate_safety_metrics": [
+    "false_approvals",
+    "unnecessary_holds",
+    "missed_clarifications",
+    "unsupported_citations",
+    "omitted_cases"
+  ],
+  "material_quality_difference_points": 8,
+  "material_false_approval_difference_cases": 3,
+  "maximum_score_deficit_for_false_approval_override": 4,
+  "practical_quality_tie": {
+    "score_difference_less_than": 8,
+    "false_approval_difference_less_than": 3
+  },
+  "material_burden_difference": {
+    "minimum_relative_reduction": 0.25,
+    "minimum_independent_metrics_improved": 2,
+    "maximum_allowed_relative_increase_in_another_primary_metric": 0.25,
+    "primary_metrics": [
+      "human_interventions",
+      "runtime_model_turns",
+      "github_tool_calls",
+      "workflow_runner_seconds",
+      "implementation_plus_prompt_config_loc"
+    ]
+  },
+  "outcome_rules": {
+    "CCS_ARCHITECTURE_ADDS_MEASURABLE_VALUE": "Lane C materially outperforms Lane B on quality with no worse false-approval count, or ties on quality and has a material burden advantage.",
+    "SIMPLE_LLM_WORKFLOW_PREFERRED_FOR_THIS_TASK": "Lane B meets the symmetric condition against Lane C.",
+    "DETERMINISTIC_AUTOMATION_SUFFICIENT_FOR_THIS_TASK": "Lane A practically ties the best AI lane on quality and has a material burden advantage.",
+    "MIXED_TRADEOFF": "Quality, safety, and burden advantages point in different directions.",
+    "INCONCLUSIVE": "A critical control is violated or the comparison cannot be scored under the frozen protocol."
+  },
+  "gold_validation": {
+    "preferred": "HUMAN-VALIDATED-GOLD",
+    "fallback": "PROVISIONAL-GOLD-NOT-FULLY-HUMAN-VALIDATED",
+    "model_review_is_not_human_validation": true
+  }
+}
