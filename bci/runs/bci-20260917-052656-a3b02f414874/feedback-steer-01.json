@@ -1,0 +1,12 @@
+{
+  "schema": "bci.feedback.v3",
+  "runId": "bci-20260917-052656-a3b02f414874",
+  "steer": 1,
+  "sourceTask": 2,
+  "sourceCandidateId": "t2-r0-9b3e1",
+  "sourcePlanRevision": 0,
+  "choice": "A",
+  "meaning": "PROJECT_FIRST",
+  "createdAt": "2026-09-17T05:29:42.418Z",
+  "nonce": "d1a064c6-5722-4a76-ba69-283cae21afb8"
+}
