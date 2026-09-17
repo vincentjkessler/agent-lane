@@ -1,13 +1,13 @@
 {
   "schema": "ccs-016-final/v1",
   "experiment_id": "CCS-016-20260916-ADAPT1",
-  "status": "PASS-COMPARISON-COMPLETE-PENDING-EXTERNAL-REVIEW",
+  "status": "PASS-COMPARISON-COMPLETE-EXTERNALLY-REVIEWED",
   "pass_meaning": "The controlled comparison completed and both lanes were checked against the same pre-edit expected fixture. PASS does not mean the compositional lane won.",
   "challenge_provenance": {
     "supplied_by": "human principal investigator",
     "challenge_authoring_assistance": "Astra 6",
     "implementation_assistance_both_lanes": "GPT-5.6 Sol",
-    "planned_external_evaluator": "Opus 4.6",
+    "external_evaluator": "Opus 4.6",
     "provenance_correction": "provenance-correction.json",
     "note": "The first disruption metadata incorrectly attributed challenge assistance to Codex; the correction is preserved as an audit event."
   },
@@ -31,7 +31,7 @@
     "created_by": "GPT-5.6 Sol from the human-supplied Astra-6-assisted challenge and frozen records",
     "checked_by": "GPT-5.6 Sol-authored deterministic comparator",
     "independent_verification_claimed": false,
-    "planned_external_evaluation": "Opus 4.6",
+    "external_review": "Opus 4.6 review text supplied by the human principal investigator",
     "approve": ["R-105", "R-108"],
     "hold": ["R-101", "R-102", "R-103", "R-104", "R-106", "R-107"],
     "fixture": "expected-adapted.json"
@@ -98,7 +98,7 @@
     "GPT_5_6_Sol": "same implementation assistance for both lanes; expected-fixture derivation; deterministic comparator authoring",
     "runtime_llm_calls_conventional": 0,
     "runtime_llm_calls_compositional": 0,
-    "Opus_4_6": "planned external evaluator; evaluation not yet incorporated"
+    "Opus_4_6": "external methodological review supplied by the human; direct artifact inspection and independent rerun were not established"
   },
   "shared_evaluation_work": [
     "disruption.json",
@@ -110,5 +110,13 @@
   ],
   "observed_result": "CONVENTIONAL_LOWER_ADAPTATION_BURDEN",
   "result_basis": "Both lanes were correct on the same fixture and succeeded without retries. Both touched one implementation file and required no lane-specific human message. Conventional automation required 10 changed lines in code versus 12 changed lines in compositional configuration. The compositional lane preserved engine code unchanged, which is a real locality/modularity property, but this challenge did not demonstrate lower measured adaptation burden.",
-  "interpretation": "CCS-016 does not support the hypothesis that the compositional architecture reduces adaptation burden for this policy change. Its config-only adaptation may matter under repeated or larger changes, but that value was not established here and should be tested rather than assumed."
+  "original_interpretation": "CCS-016 does not support the hypothesis that the compositional architecture reduces adaptation burden for this policy change. Its config-only adaptation may matter under repeated or larger changes, but that value was not established here and should be tested rather than assumed.",
+  "external_review": {
+    "artifact": "external-review-opus46.json",
+    "reviewer": "Opus 4.6",
+    "artifact_inspection_established": false,
+    "independent_checker_rerun_established": false,
+    "post_review_interpretation": "NO_PRACTICALLY_MEANINGFUL_TOTAL_ADAPTATION_DIFFERENCE_ESTABLISHED",
+    "locality_observation": "The compositional lane changed configuration while the conventional lane changed code; this is an observed separation-of-policy property, not a demonstrated scale or cost advantage."
+  }
 }
